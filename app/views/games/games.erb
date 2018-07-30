@@ -1,13 +1,24 @@
-<h1>GAMES PAGE</h1>
-
 <center>
 <h1> Welcome, <%= current_user.username %> </h1>
 
 <h2> Games </h2>
 
 <% @games.each do |game| %>
-  <div>
-    <%= game.titles %>
-  </div>
-  </center>
+
+
+<div class="container">
+          
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title: <%= game.titles %>  |  Platform: <%= game.platform %></th>
+ 
+      </tr>
+    </thead>
+    </tbody>
+  </table>
+</div>
 <% end %>
+
+
+ 
