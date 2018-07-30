@@ -1,1 +1,18 @@
-<h1>CREATE USER PAGE</h1>
+<center><h1>CREATE USER PAGE</h1></center>
+
+<% unless locals.empty? %>
+  <center><%= message %></center>
+<% end %>
+
+ <center><h3>Sign Up</h3></center>
+
+<form action="/signup" method="POST">
+
+	<center>
+	  <p>Full Name: <input type="text" name="username"></p>
+	  <p>Email: <input type="text" name="email"></p>
+	  <p>Password: <input type="text" name="password"></p>
+	  <input class="btn btn-primary" type="submit">
+	</center>
+
+</form>
