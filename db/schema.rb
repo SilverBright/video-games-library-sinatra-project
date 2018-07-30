@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730184747) do
+ActiveRecord::Schema.define(version: 20180730225345) do
 
   create_table "games", force: :cascade do |t|
     t.string  "titles"
     t.integer "user_id"
+    t.string  "platform"
   end
 
   create_table "users", force: :cascade do |t|
