@@ -9,28 +9,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+  <body>
 
-<div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
+    <center><h2>Please sign in, or sign up below</h2>
 
-</body>
+  <nav>
+     <% if logged_in? %>
+
+    <a href="/games/new" class="btn btn-info btn-lg" role="button" >Add A Game</a>
+    <a href="/logout" class="btn btn-info btn-lg" role="button" >Log Out</a>
+
+    <p>Welcome, <%=current_user.username %></p>
+
+      <% else %> 
+      <a href="/signup" class="btn btn-info btn-lg" role="button" >Sign Up</a>
+      <a href="/login" class="btn btn-info btn-lg" role="button" >Log In</a>
+
+      <%end %>
+
+
+    </nav>  
+  </body>
 </html>
-
 
 
