@@ -1,1 +1,10 @@
 <h1>SHOW GAME PAGE</h1>
+
+<p><%= @game.titles %>
+
+<form method="post" action="/games/<%=@game.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Title">
+</form>
+
+<a href="/games/<%=@game.id%>/edit">Edit Title </a>
