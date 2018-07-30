@@ -1,2 +1,13 @@
 <h1>GAMES PAGE</h1>
 
+<center>
+<h1> Welcome, <%= current_user.username %> </h1>
+
+<h2> Games </h2>
+
+<% @games.each do |game| %>
+  <div>
+    <%= game.title %>
+  </div>
+  </center>
+<% end %>
