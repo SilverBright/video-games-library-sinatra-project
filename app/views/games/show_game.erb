@@ -17,8 +17,13 @@
   </table>
 </div>
 
+<form action="/games/<%= @game.id %>/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type='submit' value='Delete'>
+    </form>
 
-<form action="/games/<%= @game.id %>" method='post'>
+
+<!-- <form action="/games/<%= @game.id %>" method='post'>
 
   <input id='hidden' type='hidden' name='_method' value='patch'>
 
@@ -37,9 +42,8 @@
 
 
 
-<!-- <form method="post" action="/games/<%=@game.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Title">
-</form>
 
-<a href="/games/<%=@game.id%>/edit">Edit Title </a> -->
+</form> -->
+

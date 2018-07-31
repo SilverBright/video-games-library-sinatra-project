@@ -69,15 +69,17 @@ get '/games/:id/edit' do
        end
  
 
-  delete '/games/:id/game' do
+  delete '/games/:id/delete' do
     @game = Game.find_by_id(params[:id])
     if logged_in?
       @user = current_user
       if @user.games.include?(@game)
         @game.delete
         flash[:success] = "Successfully deleted game."
+        redirect to '/games'
     else
       redirect to "/games/#{params[:id]}"
+
       end
     end
   end
