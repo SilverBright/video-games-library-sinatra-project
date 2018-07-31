@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect to "/games"
     else
-      redirect to '/signup'
+      redirect to '/login'
     end
   end
 
