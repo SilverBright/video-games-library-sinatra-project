@@ -18,11 +18,28 @@
 </div>
 
 
+<form action="/games/<%= @game.id %>" method='post'>
+
+  <input id='hidden' type='hidden' name='_method' value='patch'>
+
+   Title:<br>
+  <input type="text" name="titles"  value='<%= @game.titles %>'><br>
+   Platform:<br>
+  <input type="text" name="platform" value='<%= @game.platform %>'><br>
+    
+  <br></br>
 
 
-<form method="post" action="/games/<%=@game.id%>/delete">
+  <input type='submit' id='submit' value='Submit Changes'>
+</form>
+
+
+
+
+
+<!-- <form method="post" action="/games/<%=@game.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Title">
 </form>
 
-<a href="/games/<%=@game.id%>/edit">Edit Title </a>
+<a href="/games/<%=@game.id%>/edit">Edit Title </a> -->

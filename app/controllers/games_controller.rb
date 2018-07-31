@@ -18,78 +18,67 @@ class GamesController < ApplicationController
   end
 
   post '/games' do
-    if logged_in?
-      if params[:titles] == "" 
+    # if logged_in?
+      if params[:titles] == "" || params[:platform] == ""
         redirect to "/games/new"
       else
-        # @game = current_user.games.build(titles: params[:title])
         @game = Game.create(params)
-        if @game.save
+        @game.save
+        flash[:success] = "You have created a new game"
           redirect to "/games/#{@game.id}"
-        else
-          redirect to "/games/new"
-        end
-      end
-    else
-      redirect to '/login'
+        # else
+        #   redirect to "/games/new"
+    #     end
+    #   end
+    # else
+    #   redirect to '/login'
     end
   end
 
   get '/games/:id' do
     if logged_in?
+      @user = current_user
       @game = Game.find_by_id(params[:id])
       erb :'games/show_game'
-
     else
       redirect to '/login'
     end
   end
-
 
 get '/games/:id/edit' do
     if logged_in?
       @game = Game.find_by_id(params[:id])
-      if @game && @game.user == current_user
-        erb :'games/edit_game'
+      if @game.user == current_user
+        erb :'games/#{params[:id]/edit_game'
       else
-        redirect to '/games'
+        redirect to "/games/edit_game"
       end
-    else
-      redirect to '/login'
     end
   end
 
   patch '/games/:id' do
-    if logged_in?
-      if params[:titles] == ""
+    if logged_in? && params[:titles] == ""
         redirect to "/games/#{params[:id]}/edit"
       else
         @game = Game.find_by_id(params[:id])
-        if @game && @game.user == current_user
-          if @game.update(titles: params[:titles])
-            redirect to "/games/#{@game.id}"
-          else
-            redirect to "/games/#{@game.id}/edit"
-          end
-        else
-          redirect to '/games'
-        end
-      end
-    else
-      redirect to '/login'
-    end
-  end
+        @game.update(titles: params[:titles], platform: params[:platform])
+        @game.save
+        flash[:success] = "Successfully edited game.!!"
+      redirect "/games/#{params[:id]}"
+         end
+       end
+ 
 
   delete '/games/:id/game' do
+    @game = Game.find_by_id(params[:id])
     if logged_in?
-      @game = Game.find_by_id(params[:id])
-      if @game && @game.user == current_user
+      @user = current_user
+      if @user.games.include?(@game)
         @game.delete
-      end
-      redirect to '/games'
+        flash[:success] = "Successfully deleted game."
     else
-      redirect to '/login'
+      redirect to "/games/#{params[:id]}"
+      end
     end
   end
 end
-
