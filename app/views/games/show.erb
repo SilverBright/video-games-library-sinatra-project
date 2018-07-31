@@ -17,10 +17,10 @@
   </table>
 </div>
 
-<form action="/games/<%= @game.id %>/delete" method="post">
+<!-- <form action="/games/<%= @game.id %>/delete" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type='submit' value='Delete'>
-    </form>
+    </form> -->
 
 
 <!-- <form action="/games/<%= @game.id %>" method='post'>
@@ -36,14 +36,17 @@
 
 
   <input type='submit' id='submit' value='Submit Changes'>
+</form> -->
+
+
+
+
+
+<form action="/games/<%= @game.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Title">
+
 </form>
 
 
-
-
-
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Title">
-
-</form> -->
 

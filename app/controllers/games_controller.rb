@@ -70,8 +70,10 @@ get '/games/:id/edit' do
       if @user.games.include?(@game)
         @game.delete
         flash[:success] = "Successfully deleted game."
-        redirect to '/games'
+
+        redirect to '/'
     else
+      flash[:notice] = "Your game was not deleted"
       redirect to "/games/#{params[:id]}"
 
       end
