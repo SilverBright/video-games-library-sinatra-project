@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
 
-  get '/signup' do
+  get '/register' do
     if !logged_in?
-      erb :'users/create_user', locals: {message: "Please create a new account."}
+      erb :'users/register', locals: {message: "Please create a new account."}
     else
       redirect to '/games'
     end
   end
 
-  post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      redirect to '/signup'
+  post '/register' do
+    if params[:username] == "" || params[:password] == ""
+      redirect to '/register'
     else
       @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
       @user.save
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/login'
     else
-      redirect to '/games'
+      redirect to '/signup'
     end
   end
 
