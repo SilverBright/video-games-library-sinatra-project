@@ -1,6 +1,24 @@
-<h1>SHOW GAME PAGE</h1>
+<h1>SHOW THE GAME YOU JUST SUBMITED PAGE</h1>
 
-<p><%= @game.titles %>
+<div class="container">        
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Platform</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @game.titles %></td>
+        <td><%= @game.platform %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
 
 <form method="post" action="/games/<%=@game.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
