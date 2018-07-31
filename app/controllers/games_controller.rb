@@ -62,7 +62,7 @@ get '/games/:id/edit' do
   patch '/games/:id' do
     if logged_in?
       if params[:titles] == ""
-        redirect to "/gamess/#{params[:id]}/edit"
+        redirect to "/games/#{params[:id]}/edit"
       else
         @game = Game.find_by_id(params[:id])
         if @game && @game.user == current_user
