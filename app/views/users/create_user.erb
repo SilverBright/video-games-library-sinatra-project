@@ -6,13 +6,30 @@
 
  <center><h3>Sign Up</h3></center>
 
-<form action="/signup" method="POST">
 
-	<center>
-	  <p>Username: <input type="text" name="username"></p>
-	  <p>Email: <input type="text" name="email"></p>
-	  <p>Password: <input type="text" name="password"></p>
-	  <input class="btn btn-primary" type="submit">
-	</center>
+<div class="container">
+
+  <center>
+  <form class="form-inline" method="post" action="/signup">
+    <div class="form-group">
+      <label for="username">Username:</label>   
+      <input type="username" class="form-control" placeholder="Username" name="username">
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" placeholder="Email" name="email">
+    </div>
+   
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="password">
+    </div>
+    <br><br>
+    <input class="btn btn-primary" type="submit">
+    </center>
+  </form>
+</div>
+
 
 </form>
