@@ -23,7 +23,7 @@ class GamesController < ApplicationController
       if params[:titles] == "" || params[:platform] == ""
         redirect to "/games/new"
       else
-        @game = Game.create(params)
+        @game = Game.create(titles: params[:titles], platform: params[:platform])
         @game.save
         flash[:success] = "You have created a new game"
           redirect to "/games/#{@game.id}"
