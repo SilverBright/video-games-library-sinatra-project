@@ -19,20 +19,13 @@ class GamesController < ApplicationController
   end
 
   post '/games' do
-    # if logged_in?
-      if params[:titles] == "" || params[:platform] == ""
+    if logged_in? && params[:titles] == "" || params[:platform] == ""
         redirect to "/games/new"
       else
-        @game = Game.create(titles: params[:titles], platform: params[:platform])
+        @game = Game.create(params)
         @game.save
         flash[:success] = "You have created a new game"
           redirect to "/games/#{@game.id}"
-        # else
-        #   redirect to "/games/new"
-    #     end
-    #   end
-    # else
-    #   redirect to '/login'
     end
   end
 
