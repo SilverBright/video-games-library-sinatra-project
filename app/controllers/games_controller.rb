@@ -67,16 +67,16 @@ get '/games/:id/edit' do
     @game = Game.find_by_id(params[:id])
     if logged_in?
       @user = current_user
-      if @user.games.include?(@game)
+      # if @user.games.include?(@game)
         @game.delete
-        flash[:success] = "Successfully deleted game."
+        # flash[:success] = "Successfully deleted game."
 
         redirect to '/'
     else
       flash[:notice] = "Your game was not deleted"
       redirect to "/games/#{params[:id]}"
 
-      end
+      
     end
   end
 end
