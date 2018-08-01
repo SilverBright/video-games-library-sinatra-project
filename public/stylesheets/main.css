@@ -33,6 +33,10 @@
     width: 85%;
   }
 
+  .jumbotron {
+    background: url("../images/spaceinvadersblurred.jpg")
+  }
+
   .jumbotron h1{
     color: #fff;
 }

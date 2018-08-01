@@ -1,6 +1,54 @@
-<h1>EDIT GAME PAGE</h1>
+<center>
+<h3>Edit or delete your game.</h3>
 
-<form action="/games/<%= @game.id %>" method='post'>
+<div class="container">        
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Platform</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @game.titles %></td>
+        <td><%= @game.platform %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<center>
+
+
+<div class="container">
+  <form class="form-inline" method="post" action="/games/<%= @game.id %>">
+    <input id='hidden' type='hidden' name='_method' value='patch'>
+    <div class="form-group">
+      <label for="titles">Title:</label>   
+      <input type="text" class="form-control" placeholder="titles" name="titles">
+    </div>
+    <div class="form-group">
+      &emsp;&emsp;
+      <label for="platform">Platform:</label>
+      <input type="text" class="form-control" placeholder="platform" name="platform">
+    </div>
+    <br></br>
+    <button type="submit" id='submit' class="btn btn-default">Submit</button>  
+  </form>
+</div>
+<br>
+<!-- <h3>Or you can delete your title</h3> -->
+<div>
+<form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Title">
+</form>
+</div>
+</center>
+
+
+<!-- <form action="/games/<%= @game.id %>" method='post'>
   <input id='hidden' type='hidden' name='_method' value='patch'>
    Title:<br>
   <input type="text" name="titles"  value='<%= @game.titles %>'><br>
@@ -11,4 +59,4 @@
 
 
   <input type='submit' id='submit' value='Submit Changes'>
-</form>
+</form> -->

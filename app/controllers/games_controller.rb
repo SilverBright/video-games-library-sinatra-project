@@ -32,7 +32,6 @@ class GamesController < ApplicationController
 
   get '/games/:id' do
     if logged_in?
-      @user = current_user
       @game = Game.find_by_id(params[:id])
       erb :'games/show'
     else
@@ -41,15 +40,25 @@ class GamesController < ApplicationController
   end
 
   get '/games/:id/edit' do
-      if logged_in?
-        @game = Game.find_by_id(params[:id])
-        if @game.user == current_user
-          erb :'games/edit'
-        else
-          redirect to "/games/#{params[:id]}"
-        end
-      end
-    end
+    @game = Game.find_by_id(params[:id])
+    erb :'games/edit'
+  end
+
+  # get '/games/:id/edit' do
+  #     if logged_in?
+  #       @game = Game.find_by_id(params[:id])
+  #       # if @game.user == current_user
+  #       if @game && @game.user = current_user
+  #         erb :'games/edit'
+  #       else
+  #         redirect to '/games'
+  #         end
+  #       else
+  #         # redirect to "/games/#{params[:id]}"
+  #           redirect to '/login'
+  #       end
+  #     end
+  #   end
 
   patch '/games/:id' do
     if logged_in? && params[:titles] == ""
