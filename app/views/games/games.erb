@@ -1,7 +1,6 @@
 <center>
-<h1> Welcome, <%= current_user.username %> </h1>
 
-<h2> THIS IS THE ENTIRE VIDEO GAME LIBRARY FROM ALL USERS </h2>
+<h2> COMPLETE LIBRARY</h2>
 
 <% @games.each do |game| %>
 
@@ -10,14 +9,15 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Title: <%= game.titles %>  |  Platform: <%= game.platform %></th>
- 
+        <th>Title:&ensp;<%= game.titles %>, &emsp;Platform:&ensp;<%= game.platform %></th>
       </tr>
     </thead>
     </tbody>
   </table>
 </div>
 <% end %>
+
+
 
 
  
