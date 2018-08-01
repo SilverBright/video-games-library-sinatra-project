@@ -52,7 +52,8 @@ class GamesController < ApplicationController
       @game.update(title: params[:title], platform: params[:platform])
       @game.save
       flash[:success] = "You've successfully edited a game!"
-      redirect "/games/#{params[:id]}"
+      # redirect "/games/#{params[:id]}"
+      redirect "/games"
     end
   end
 
