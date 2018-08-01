@@ -20,7 +20,7 @@ class GamesController < ApplicationController
   end
 
   post '/games' do
-    if params[:titles] == "" || params[:platform] == ""
+    if params[:title] == "" || params[:platform] == ""
         redirect to "/games/new"
     else
       @game = Game.create(params)
@@ -45,11 +45,11 @@ class GamesController < ApplicationController
   end
 
   patch '/games/:id' do
-    if logged_in? && params[:titles] == ""
+    if logged_in? && params[:title] == ""
         redirect to "/games/#{params[:id]}/edit"
     else
       @game = Game.find_by_id(params[:id])
-      @game.update(titles: params[:titles], platform: params[:platform])
+      @game.update(title: params[:title], platform: params[:platform])
       @game.save
       flash[:success] = "You've successfully edited a game!"
       redirect "/games/#{params[:id]}"
