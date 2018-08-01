@@ -58,7 +58,7 @@ class GamesController < ApplicationController
         @game = Game.find_by_id(params[:id])
         @game.update(titles: params[:titles], platform: params[:platform])
         @game.save
-        flash[:success] = "Successfully edited game.!!"
+        flash[:success] = "You've successfully edited game!"
       redirect "/games/#{params[:id]}"
     end
   end
@@ -68,11 +68,11 @@ class GamesController < ApplicationController
     if logged_in?
       @user = current_user
         @game.delete
-        flash[:success] = "Successfully deleted game!"
+        flash[:success] = "You've successfully deleted game!"
         # redirect to '/games'
         redirect to '/'
     else
-      flash[:error] = "Your game was not deleted"
+      flash[:error] = "Oops, your game was not deleted"
       redirect to "/games/#{params[:id]}"
     end
   end
