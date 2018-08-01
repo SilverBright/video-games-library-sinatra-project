@@ -1,36 +1,22 @@
-<% require 'pry' %>
-
 <center>
-<h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
+	<h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
 
-<div class="container">
-	<a class="btn btn-primary" href="/games/new" role="button">Add A Game!</a>
-
-</div>
-
-<br />
-
-<% @user.games.each do |game| %>
-<div>
-	<%= game.title %> <%= game.platform %> <%=  %> 
-
+	<div class="container">
+		<a class="btn btn-primary" href="/games/new" role="button">Add A Game!</a>
 	</div>
-<% end %>
+</center>
 
+	<br />
 
+	<% @games.each do |game| %>
 
-
-<% @games.each do |game| %>
-
-<div class="container">  
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Title:&ensp;<%= game.title %>, &emsp;Platform:&ensp; <%= game.platform %>
-        </th>
-      </tr>
-    </thead>
-    </tbody>
-  </table>
-</div>
-<% end %>
+	<div class="container">    
+	  <div class="row">
+	    <div class="col-sm-6"><b>Title:&ensp;</b><%= game.title %>
+	    </div>
+	    <div class="col-sm-6"><b>Platform:&ensp;</b><%= game.platform %>
+	    </div>
+	    <hr>
+	  </div>
+	</div>
+<% end %> 
