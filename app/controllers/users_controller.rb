@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
+  # get '/users/:slug' do
+  #   @user = User.find_by_slug(params[:slug])
+  #   @games = @user.games
+  #     erb :'/users/show'
+
   get '/register' do
     if logged_in?
-      redirect "/users/#{@user.slug}"
+      redirect "/users/#{@user.id}"
       # erb :'users/register'
     else
       erb :'/users/register'
@@ -13,9 +18,9 @@ class UsersController < ApplicationController
    @user = User.create(username: params[:username], password: params[:password])
     if @user.valid?
       session[:user_id] = @user.id
-      redirect "/users/#{@user.slug}"
+      redirect "/users/#{@user.id}"
     elsif @user.invalid? && User.find_by(username: @user.username)
-       flash[:error] = "That username is already taken"
+       flash[:error] = "That username is already taken, please choose another."
       redirect '/register'
     else
         flash[:error] = "You must fill out all fields to sign up."
@@ -50,7 +55,7 @@ class UsersController < ApplicationController
      session[:user_id] = @user.id
 
      flash[:success] = "Welcome Back, #{@user.username}!"
-     redirect "/users/#{@user.slug}"
+     redirect "/users/#{@user.id}"
 
    else
      flash[:error] = "Invalid username or password. Please try again."
@@ -58,12 +63,6 @@ class UsersController < ApplicationController
    end
  end
 
- get '/users/:slug' do
-    @user = User.find_by_slug(params[:slug])
-    @games = @user.games
-      erb :'/users/show'
-
-    end
 
   get '/logout' do
     if logged_in?

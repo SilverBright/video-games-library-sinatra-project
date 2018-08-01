@@ -14,6 +14,4 @@ class User < ActiveRecord::Base
     self.all.find{|user| user.slug == slug}
   end
 
-
-
 end

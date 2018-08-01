@@ -124,3 +124,14 @@
     line-height: 24px;
   }
 }
+
+.error {
+   color: red;
+   font-family: 'Ubuntu', sans-serif;
+   font-weight: bold;
+ }
+
+  .success {
+    color: green;
+    font-family: 'Ubuntu', sans-serif;
+   font-weight: bold;

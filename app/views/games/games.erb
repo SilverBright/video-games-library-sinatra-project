@@ -3,21 +3,28 @@
 
 <h2> THIS IS THE ENTIRE VIDEO GAME LIBRARY FROM ALL USERS </h2>
 
+
+
+ <br></br>
+    <div class="pull-right">
+      <div class="btn-group">
+    <a href="/users/<%= @user.slug %>"><button type="button" class="btn btn-primary">Profile</button></a>
+    <a href="/games/new"><button type="button" class="btn btn-success">Add Game</button></a>
+
+  </div>
+          </a>
+      </div>
+
+<h1>Hiking log</h1>
+
 <% @games.each do |game| %>
 
-<div class="container">
-          
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Title: <%= game.titles %>  |  Platform: <%= game.platform %>  |  User: <%= @user %> </th>
- 
-      </tr>
-    </thead>
-    </tbody>
-  </table>
-</div>
+
+<a href="/games/<%= game.id %>"><h3><%= game.titles %></h3></a>
+Posted by: <a href="/users/<%= game.user.slug %>"><%= game.user.username %></a><br>
+Location: <label><%= game.platform %></label>
+
+
+
+
 <% end %>
-
-
- 

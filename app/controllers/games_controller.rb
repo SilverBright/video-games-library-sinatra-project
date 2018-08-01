@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   get '/games' do
     if logged_in?
       @user = current_user
+      session[:user_id] = @user.id
       @games = Game.all
       erb :'games/games'
     else
@@ -19,13 +20,13 @@ class GamesController < ApplicationController
   end
 
   post '/games' do
-    if logged_in? && params[:titles] == "" || params[:platform] == ""
+    if params[:titles] == "" || params[:platform] == ""
         redirect to "/games/new"
       else
         @game = Game.create(params)
         @game.save
-        flash[:success] = "You have created a new game"
-          redirect to "/games/#{@game.id}"
+        # flash[:success] = "You have created a new game"
+        redirect to "/games/#{@game.id}"
     end
   end
 
@@ -43,9 +44,10 @@ get '/games/:id/edit' do
     if logged_in?
       @game = Game.find_by_id(params[:id])
       if @game.user == current_user
-        erb :'games/#{params[:id]/edit'
+        # erb :'games/#{params[:id]/edit'
+        erb :'games/edit'
       else
-        # redirect to "/games/edit"
+        redirect to "/games/#{params[:id]}"
       end
     end
   end
@@ -73,7 +75,7 @@ get '/games/:id/edit' do
 
         redirect to '/'
     else
-      flash[:notice] = "Your game was not deleted"
+      flash[:error] = "Your game was not deleted"
       redirect to "/games/#{params[:id]}"
 
       

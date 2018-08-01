@@ -30,6 +30,19 @@
   <h1>Video Games Library</h1> 
 </div>
 
+<center><div class="error">
+    <% if flash[:error] != "" %>
+      <p> <%= flash[:error] %> </p>
+    <% end %>
+  </div>
+
+  <div class="success">
+    <% if flash[:success] != "" %>
+      <p> <%= flash[:success] %> </p>
+    <% end %>
+  </div>
+</center>
+
 <%= yield %>
   
 </body>
