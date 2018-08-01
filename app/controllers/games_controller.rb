@@ -22,11 +22,11 @@ class GamesController < ApplicationController
   post '/games' do
     if params[:titles] == "" || params[:platform] == ""
         redirect to "/games/new"
-      else
-        @game = Game.create(params)
-        @game.save
-        flash[:success] = "You have successfully created a new game!"
-        redirect to "/games/#{@game.id}"
+    else
+      @game = Game.create(params)
+      @game.save
+      flash[:success] = "You have successfully created a new game!"
+      redirect to "/games/#{@game.id}"
     end
   end
 
@@ -47,11 +47,11 @@ class GamesController < ApplicationController
   patch '/games/:id' do
     if logged_in? && params[:titles] == ""
         redirect to "/games/#{params[:id]}/edit"
-      else
-        @game = Game.find_by_id(params[:id])
-        @game.update(titles: params[:titles], platform: params[:platform])
-        @game.save
-        flash[:success] = "You've successfully edited a game!"
+    else
+      @game = Game.find_by_id(params[:id])
+      @game.update(titles: params[:titles], platform: params[:platform])
+      @game.save
+      flash[:success] = "You've successfully edited a game!"
       redirect "/games/#{params[:id]}"
     end
   end
@@ -60,9 +60,9 @@ class GamesController < ApplicationController
     @game = Game.find_by_id(params[:id])
     if logged_in?
       @user = current_user
-        @game.delete
-        flash[:success] = "You've successfully deleted a game!"
-        redirect to '/games'
+      @game.delete
+      flash[:success] = "You've successfully deleted a game!"
+      redirect to '/games'
     else
       flash[:error] = "Oops, your game was not deleted"
       redirect to "/games/#{params[:id]}"
