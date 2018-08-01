@@ -1,1 +1,11 @@
 <h1>SHOW USERS PAGE</h1>
+
+Here are your games
+
+<% @user.games.each do |game| %>
+	<div>
+		<%= game.title %>  <%= game.platform %>  
+
+
+	</div>
+	<% end %>

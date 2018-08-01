@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
 
-  get 'user/:slug' do
-    @user = User.find_by_slug(params[:slug])
-    erb :'users/show'
-  end
 
   get '/register' do
     if logged_in?

@@ -1,12 +1,24 @@
+<% require 'pry' %>
+
 <center>
 <h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
 
 <div class="container">
 	<a class="btn btn-primary" href="/games/new" role="button">Add A Game!</a>
-	
+
 </div>
 
 <br />
+
+<% @user.games.each do |game| %>
+<div>
+	<%= game.title %> <%= game.platform %> <%=  %> 
+
+	</div>
+<% end %>
+
+
+
 
 <% @games.each do |game| %>
 
@@ -14,7 +26,8 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Title:&ensp;<%= game.title %>, &emsp;Platform:&ensp;<%= game.platform %></th>
+        <th>Title:&ensp;<%= game.title %>, &emsp;Platform:&ensp; <%= game.platform %>
+        </th>
       </tr>
     </thead>
     </tbody>
