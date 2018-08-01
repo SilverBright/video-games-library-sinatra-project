@@ -12,27 +12,25 @@
   <body>
 
     
-    <center><h2>Please register or Log In Below</h2>
+    <center>
       
   <nav>
      <% if logged_in? %>
+     
 
-     <h3>Welcome, <%=current_user.username %>!</h3>
+<!--      <h3>Welcome, <%=current_user.username %>!</h3> -->
 
     <a href="/games/new" class="btn btn-info btn-lg" role="button" >Add A Game</a>
     <br></br>
     <a href="/logout" class="btn btn-info btn-lg" role="button" >Log Out</a>
 
     <br></br>
-
-    
-    
-
-      <% else %> 
-
-      
+    <% else %>
+    <h2>Please register or Log In</h2>
 
       <a href="/register" class="btn btn-info btn-lg" role="button" >Register</a>
+      <br>
+      <br>
       <a href="/login" class="btn btn-info btn-lg" role="button" >Log In</a>
 
       <%end %>

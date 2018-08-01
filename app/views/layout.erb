@@ -28,8 +28,10 @@
 <div class="jumbotron text-center" style="background-image: url('../images/spaceinvadersblurred.jpg')">
   <h1>Video Games Library</h1>
   <br>
+  <% if logged_in? %>
   <h2>Welcome, <%=current_user.username %>!</h2> 
 </div>
+<% end %>
 
 <center><div class="error">
     <% if flash[:error] != "" %>
