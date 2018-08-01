@@ -38,7 +38,7 @@
   </form>
 </div>
 <br>
-<!-- <h3>Or you can delete your title</h3> -->
+
 <div>
 <form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post">
   <input type="hidden" name="_method" value="DELETE">
@@ -47,16 +47,3 @@
 </div>
 </center>
 
-
-<!-- <form action="/games/<%= @game.id %>" method='post'>
-  <input id='hidden' type='hidden' name='_method' value='patch'>
-   Title:<br>
-  <input type="text" name="titles"  value='<%= @game.titles %>'><br>
-   Platform:<br>
-  <input type="text" name="platform" value='<%= @game.platform %>'><br>
-    
-  <br></br>
-
-
-  <input type='submit' id='submit' value='Submit Changes'>
-</form> -->

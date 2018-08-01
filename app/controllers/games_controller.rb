@@ -44,22 +44,6 @@ class GamesController < ApplicationController
     erb :'games/edit'
   end
 
-  # get '/games/:id/edit' do
-  #     if logged_in?
-  #       @game = Game.find_by_id(params[:id])
-  #       # if @game.user == current_user
-  #       if @game && @game.user = current_user
-  #         erb :'games/edit'
-  #       else
-  #         redirect to '/games'
-  #         end
-  #       else
-  #         # redirect to "/games/#{params[:id]}"
-  #           redirect to '/login'
-  #       end
-  #     end
-  #   end
-
   patch '/games/:id' do
     if logged_in? && params[:titles] == ""
         redirect to "/games/#{params[:id]}/edit"
@@ -78,7 +62,6 @@ class GamesController < ApplicationController
       @user = current_user
         @game.delete
         flash[:success] = "You've successfully deleted game!"
-        # redirect to '/games'
         redirect to '/'
     else
       flash[:error] = "Oops, your game was not deleted"
