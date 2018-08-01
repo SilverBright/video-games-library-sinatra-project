@@ -1,5 +1,3 @@
-<h1>SHOW THE GAME YOU JUST SUBMITTED PAGE</h1>
-
 <div class="container">        
   <table class="table table-bordered">
     <thead>
@@ -17,27 +15,32 @@
   </table>
 </div>
 
-<form action="/games/<%= @game.id %>" method='post'>
-
-  <input id='hidden' type='hidden' name='_method' value='patch'>
-
-   Title:<br>
-  <input type="text" name="titles"  value='<%= @game.titles %>'><br>
-   Platform:<br>
-  <input type="text" name="platform" value='<%= @game.platform %>'><br>
-    
-  <br></br>
-
-
-  <input type='submit' id='submit' value='Submit Changes'>
-</form> 
-
-
-<form action="/games/<%= @game.id %>/delete" method="post">
+ <center>
+<div class="container">
+  <form class="form" method="post" action="/games/<%= @game.id %>">
+    <input id='hidden' type='hidden' name='_method' value='patch'>
+    <div class="form-group">
+      <label for="titles">Title:</label>   
+      <input type="text" class="form-control" placeholder="titles" name="titles">
+    </div>
+    <div class="form-group">
+      &emsp;&emsp;
+      <label for="platform">Platform:</label>
+      <input type="text" class="form-control" placeholder="platform" name="platform">
+    </div>
+    <br></br>
+    <button type="submit" id='submit' class="btn btn-default">Submit</button>
+    <!-- <input type='submit' id='submit' value='Submit Changes'> -->   
+  </form>
+</div>
+<br>
+<div>
+<form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Title">
-
 </form>
+</div>
+</center>
 
 
 
