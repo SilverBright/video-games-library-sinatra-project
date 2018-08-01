@@ -8,14 +8,12 @@
 
 	<br />
 
-	<% @games.each do |game| %>
+ 	<% @games.each do |game| %>
 
 	<div class="container">    
 	  <div class="row">
-	    <div class="col-sm-6"><b>Title:&ensp;</b><%= game.title %>
-	    </div>
-	    <div class="col-sm-6"><b>Platform:&ensp;</b><%= game.platform %>
-	    </div>
+	    <div class="col-sm-4"><b>Title:&ensp;</b><%= game.title %></div>
+	    <div class="col-sm-2"><b>Platform:&ensp;</b><%= game.platform %></div>
 	    <hr>
 	  </div>
 	</div>
