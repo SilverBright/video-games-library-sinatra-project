@@ -25,7 +25,7 @@ class GamesController < ApplicationController
       else
         @game = Game.create(params)
         @game.save
-        # flash[:success] = "You have created a new game"
+        flash[:success] = "You have created a new game"
         redirect to "/games/#{@game.id}"
     end
   end
@@ -71,7 +71,7 @@ get '/games/:id/edit' do
       @user = current_user
       # if @user.games.include?(@game)
         @game.delete
-        # flash[:success] = "Successfully deleted game."
+        flash[:success] = "Successfully deleted game."
 
         redirect to '/'
     else
