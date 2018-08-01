@@ -34,10 +34,10 @@ class UsersController < ApplicationController
    @user = User.find_by(:username => params[:username])
    if @user && @user.authenticate(params[:password])
      session[:user_id] = @user.id
-     redirect to "/users/show"
+     redirect to "/games"
    else
      flash[:error] = "Invalid username or password. Please try again."
-     redirect '/games'
+     redirect '/login'
    end
  end
 
