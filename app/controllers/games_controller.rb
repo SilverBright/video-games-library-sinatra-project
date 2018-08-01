@@ -25,7 +25,7 @@ class GamesController < ApplicationController
       else
         @game = Game.create(params)
         @game.save
-        flash[:success] = "You have created a new game"
+        flash[:success] = "You have successfully created a new game!"
         redirect to "/games/#{@game.id}"
     end
   end

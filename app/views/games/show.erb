@@ -15,9 +15,11 @@
   </table>
 </div>
 
- <center>
+<center>
+<h3>Edit Your Game</h3>
+ 
 <div class="container">
-  <form class="form" method="post" action="/games/<%= @game.id %>">
+  <form class="form-inline" method="post" action="/games/<%= @game.id %>">
     <input id='hidden' type='hidden' name='_method' value='patch'>
     <div class="form-group">
       <label for="titles">Title:</label>   
@@ -29,11 +31,11 @@
       <input type="text" class="form-control" placeholder="platform" name="platform">
     </div>
     <br></br>
-    <button type="submit" id='submit' class="btn btn-default">Submit</button>
-    <!-- <input type='submit' id='submit' value='Submit Changes'> -->   
+    <button type="submit" id='submit' class="btn btn-default">Submit</button>  
   </form>
 </div>
 <br>
+<h3>Or you can delete your title</h3>
 <div>
 <form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post">
   <input type="hidden" name="_method" value="DELETE">
