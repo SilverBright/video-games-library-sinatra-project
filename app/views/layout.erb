@@ -23,23 +23,22 @@
         </ul>
       </div>
     </div>
-</nav>
+  </nav>
   
-<div class="jumbotron text-center">
-  <h1>Video Games Library</h1>
-    <br>
-    <% if logged_in? %>
-    <h2>Welcome, <%=current_user.username %>!</h2> 
+  <div class="jumbotron text-center">
+    <h1>Video Games Library</h1>
+      <br>
+      <% if logged_in? %>
+      <h2>Welcome, <%=current_user.username %>!</h2> 
     <% end %>
   </div>
 
-
-<center><div class="error">
+<center>
+  <div class="error">
     <% if flash[:error] != "" %>
       <p> <%= flash[:error] %> </p>
     <% end %>
   </div>
-
   <div class="success">
     <% if flash[:success] != "" %>
       <p> <%= flash[:success] %> </p>
