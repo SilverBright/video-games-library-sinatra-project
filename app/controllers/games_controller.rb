@@ -69,7 +69,8 @@ class GamesController < ApplicationController
       @user = current_user
         @game.delete
         flash[:success] = "Successfully deleted game!"
-        redirect to '/games'
+        # redirect to '/games'
+        redirect to '/'
     else
       flash[:error] = "Your game was not deleted"
       redirect to "/games/#{params[:id]}"
