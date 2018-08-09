@@ -1,5 +1,9 @@
+<%# EDIT PAGE %>
+
 <center>
-<h3>Edit or delete your game.</h3>
+<h3>Edit or delete your game.</h3> 
+
+<%# SHOWS CURRENT TITLE %>
 
 <div class="container">        
   <table class="table table-bordered">
@@ -7,19 +11,24 @@
       <tr>
         <th>Current Title</th>
         <th>Current Platform</th>
+
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><%= @game.title %></td>
         <td><%= @game.platform %></td>
+ 
       </tr>
     </tbody>
   </table>
 </div>
 
+<%# UPDATE FORM %>
+
 <center>
 <div class="container">
+  
   <form class="form-inline" method="post" action="/games/<%= @game.id %>">
     <input id='hidden' type='hidden' name='_method' value='patch'>
     <div class="form-group">
@@ -39,6 +48,8 @@
 
 <br />
 <br />
+
+<%# DELETE BUTTON %>
 
 <div>
   <form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post" style=>

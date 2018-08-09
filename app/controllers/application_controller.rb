@@ -2,22 +2,22 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  register Sinatra::Flash
-  require 'sinatra/flash'
+  register Sinatra::Flash #flash apability
+  require 'sinatra/flash'#flash capability
 
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    enable :sessions
-    set :session_secret, "secret"
-    set :method_override, true
+    enable :sessions #make cookies
+    set :session_secret, "secret" #encrypts the cookie
+    set :method_override, true #allows for patch and delete methods
   end
 
-  get "/" do
+  get "/" do #the index page is defined as "/" here
     erb :index
   end
 
-  helpers do
+  helpers do  #define the current user and login session
 
     def logged_in?
       !!current_user

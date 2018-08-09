@@ -16,7 +16,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-image: url("../images/gaming-pattern copy.png");
+    background-image: url("../images/gaming-pattern copy.png"); /* PAGE BACKGROUND IMAGE */
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -33,16 +33,18 @@
     width: 85%;
   }
 
+    /* --- JUMBOTRON --- */
+
   .jumbotron {
-    background: url("../images/spaceinvadersblurred.jpg")
+    background: url("../images/spaceinvadersblurred.jpg") /* JUMBOTRON BACKGROUND IMAGE */
   }
 
-  .jumbotron h1{
-    color: #fff;
+  .jumbotron h1{ 
+    color: #fff; /* JUMBOTRON TEXT COLOR WHITE FOR H1 */
 }
 
   .jumbotron h2{
-    color: #fff;
+    color: #fff; /* JUMBOTRON TEXT COLOR WHITE FOR H2 */
 }
 
 
@@ -52,7 +54,7 @@
   }
 
   h2 {
-    /*border-bottom: 2px solid #ccc;*/
+    /*border-bottom: 2px solid #ccc;*/    /* DELETED BOTTOM BORDER LINE */
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -130,13 +132,15 @@
   }
 }
 
-.error {
+  /* --- FLASH --- */
+
+.error {       /* ERROR IN RED TEXT */
    color: red;
    font-family: 'Ubuntu', sans-serif;
    font-weight: bold;
  }
 
-.success {
+.success {  /* SUCCESS IN GREEN TEXT */
     color: green;
     font-family: 'Ubuntu', sans-serif;
    font-weight: bold;

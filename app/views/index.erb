@@ -1,30 +1,52 @@
+<%# HOME PAGE %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<%# BOOTSTRAP %>
+
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/stylesheets/main.css" />
+  <link rel="stylesheet" href="/stylesheets/main.css" /> <%# main.css overrides bootstrap css %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
   <body>
 <center>
+
+<%# MINI-NAVBAR %>  
+
+<%# IF LOGGED IN -- SHOW OPTIONAL ADD A GAME BUTTON %>
+
   <nav>
      <% if logged_in? %>
     <a href="/games/new" class="btn btn-info btn-lg" role="button" >Add A Game</a>
     <br></br>
+
+<%# IF LOGGED IN -- SHOW OPTIONAL LOGOUT BUTTON %>   
+
     <a href="/logout" class="btn btn-info btn-lg" role="button" >Log Out</a>
     <br />
     <% else %>
+
+<%# IF NOT LOGGED IN -- SHOW OPTIONAL REGISTER BUTTON %>  
+
     <h2>Please register or Log In</h2>
       <a href="/register" class="btn btn-info btn-lg" role="button" >Register</a>
       <br>
       <br>
+
+ <%# IF NOT LOGGED IN -- SHOW OPTIONAL LOG IN BUTTON %>  
+      
       <a href="/login" class="btn btn-info btn-lg" role="button" >Log In</a>
       <%end %>
   </nav> 
+
+
+
+  
 </center> 
 </body>
 </html>

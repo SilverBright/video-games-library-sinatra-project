@@ -1,15 +1,22 @@
+<%# LAYOUT PAGE %>
+
 <!DOCTYPE html>
 <html lang="en">
+
+<%# BOOTSTRAP %>
+
   <head>
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/stylesheets/main.css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" /> <%# main css overrides bootstrap css %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 <body>
+
+<%# NAVBAR %>
 
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -18,20 +25,25 @@
           <li class="active"><a href="/">Home</a></li>
           <li><a href="/register">Register</a></li>
           <li><a href="/login">Log In</a></li>
+          <li><a href="/logout">Log Out</a></li>
           <li><a href="/games/new">Add A Game</a></li>
           <li><a href="/games">Library</a></li>
         </ul>
       </div>
     </div>
   </nav>
+
+<%# JUMBOTRON %>
   
   <div class="jumbotron text-center">
     <h1>Video Games Library</h1>
       <br>
       <% if logged_in? %>
-      <h2>Welcome, <%=current_user.username %>!</h2> 
+      <h2>Welcome, <%=current_user.username %>!</h2>  <%# displays current_user if logged in %>  
     <% end %>
   </div>
+
+<%# FLASH MESSAGES %>
 
 <center>
   <div class="error">
@@ -45,6 +57,8 @@
     <% end %>
   </div>
 </center>
+
+<%# YIELD TO OTHER PAGES %>
 
 <%= yield %>
   

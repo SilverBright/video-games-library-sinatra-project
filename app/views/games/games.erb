@@ -1,20 +1,45 @@
-<center>
-	<h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
+<%# VIDEO GAME LIBRARY %>
 
-	<div class="container">
-		<a class="btn btn-primary" href="/games/new" role="button">Add A Game!</a>
-	</div>
-</center>
+<center>
+	<h2>YOUR COMPLETE VIDEO GAME LIBRARY</h2>
+
+<%# CREATE A NEW GAME%>
+
+    <% if logged_in? %>
+	 <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>   
+
+<%# IF LOGGED IN -- OPTIONAL LOGOUT BUTTON %>   
+
+    <a href="/logout" class="btn btn-info btn-warning" role="button" >Log Out</a>
+    <br />
+    <% end %>
+
+ </center>
+
+    
+<%# IF LOGGED IN -- OPTIONAL LOGOUT BUTTON %>   
 
 	<br />
 
- 	<% @games.each do |game| %>
+<%# LIST ALL THE GAMES %>
 
+	<% @user.games.each do |game| %>
+
+<form action="/games/<%=game.user_id%>/edit" method="POST">
 	<div class="container">    
+		<input type ="checkbox">
 	  <div class="row">
-	    <div class="col-sm-4"><b>Title:&ensp;</b><%= game.title %></div>
-	    <div class="col-sm-2"><b>Platform:&ensp;</b><%= game.platform %></div>
+	   	<div class="col-sm-4"><b>Username:&ensp;</b><%= game.user.username %></div> <%# each platform %>
+	    <div class="col-sm-4"><b>Title:&ensp;</b><%= game.title %></div> <%# each title %>
+	    <div class="col-sm-4"><b>Platform:&ensp;</b><%= game.platform %></div> <%# each platform %>
 	    <hr>
 	  </div>
 	</div>
 <% end %> 
+<center>
+ <input type="submit" value="Update Game">
+
+</center>
+</form>
+
+ 

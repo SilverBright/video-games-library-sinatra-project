@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  get '/games' do
+  get '/games' do #read - load games page
     if logged_in?
       @user = current_user
       session[:user_id] = @user.id
@@ -11,7 +11,7 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/new' do
+  get '/games/new' do #create - load new form
     if logged_in?
       erb :'games/new'
     else
@@ -19,18 +19,19 @@ class GamesController < ApplicationController
     end
   end
 
-  post '/games' do
+  post '/games' do #creates a new game
     if params[:title] == "" || params[:platform] == ""
         redirect to "/games/new"
     else
-      @game = Game.create(params)
+      # @game = Game.create(title: params[:title], platform: params[:platform])
+      @game = current_user.games.build(title: params[:title], platform: params[:platform])
       @game.save
       flash[:success] = "You've successfully created a new game!"
       redirect to "/games/#{@game.id}"
     end
   end
 
-  get '/games/:id' do
+  get '/games/:id' do #loads show page
     if logged_in?
       @game = Game.find_by_id(params[:id])
       erb :'games/show'
@@ -39,12 +40,19 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id/edit' do
-    @game = Game.find_by_id(params[:id])
-    erb :'games/edit'
+  get '/games/:id/edit' do #loads edit form
+    if logged_in? # if the user is logged in
+      @game = Game.find_by_id(params[:id]) # find the game by its param id and set it to an instance variable @game
+      if @game && @game.user == current_user #compare that specific game to the game's user (creator) to the current user
+        erb :'games/edit' #render the edit page (which has the update form)
+      else 
+        flash[:error] = "Oops!! #{@game.title} was not updated --  this is not your entry."
+        redirect to '/games' #go back to the library
+      end
+    end
   end
 
-  patch '/games/:id' do
+  patch '/games/:id' do #updates a game
     if logged_in? && params[:title] == ""
         redirect to "/games/#{params[:id]}/edit"
     else
@@ -52,12 +60,11 @@ class GamesController < ApplicationController
       @game.update(title: params[:title], platform: params[:platform])
       @game.save
       flash[:success] = "You've successfully edited a game!"
-      # redirect "/games/#{params[:id]}"
       redirect "/games"
     end
   end
 
-  delete '/games/:id/delete' do
+  delete '/games/:id/delete' do #deletes a game
     @game = Game.find_by_id(params[:id])
     if logged_in?
       @user = current_user

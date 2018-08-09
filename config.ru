@@ -6,7 +6,7 @@ end
 
 
 
-use Rack::MethodOverride
-use GamesController
+use Rack::MethodOverride #allows for use of patch and delete methods
+use GamesController 
 use UsersController
 run ApplicationController

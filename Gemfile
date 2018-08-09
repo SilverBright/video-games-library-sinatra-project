@@ -9,10 +9,10 @@ gem 'sqlite3'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt'
+gem 'bcrypt' #password encryption
 gem "tux"
-gem 'rack-flash3'
-gem 'sinatra-flash'
+gem 'rack-flash3' #flash[:notice] = messaging style
+gem 'sinatra-flash' #allows the use of flash in sinatra
 
 group :test do
   gem 'rspec'

@@ -1,3 +1,5 @@
+<%# SHOW THE CREATED GAME PAGE %>
+
 <div class="container">        
   <table class="table table-bordered">
     <thead>
@@ -9,11 +11,24 @@
     <tbody>
       <tr>
         <td><%= @game.title %></td>
-        <td><%= @game.platform %></td> 
+        <td><%= @game.platform %></td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<center><a href="/games/<%= @game.id %>/edit" class="btn btn-info" role="button">Edit Or Delete Your Game</a>
-</center>
+<%# LINK BUTTON TO EDIT PAGE %>
+
+<center>
+    <% if logged_in? %>
+    <a href="/games/<%= @game.id %>/edit" button type="button" class="btn btn-danger" role="button">Edit Or Delete Your Game</a>  <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>
+    
+
+<%# IF LOGGED IN -- OPTIONAL LOGOUT BUTTON %>   
+
+    <a href="/logout" class="btn btn-info btn-warning" role="button" >Log Out</a>
+    <br />
+    <% end %>
+    </center>
+
+
