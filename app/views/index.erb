@@ -5,7 +5,7 @@
 
 <%# BOOTSTRAP %>
 
-  <title>Bootstrap Example</title>
+  <title>Video Games Library</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,30 +20,26 @@
 
 <%# IF LOGGED IN -- SHOW OPTIONAL ADD A GAME BUTTON %>
 
-
   <nav>
     <div class="container">
      <% if logged_in? %>
-    <a href="/games/new" class="btn btn-lrg" role="button">Add A Game</a>&emsp;&emsp;
-    <br></br>
+    <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
 
 <%# IF LOGGED IN -- SHOW OPTIONAL LOGOUT BUTTON %>   
 
     <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
-    <br />
     <% else %>
 
 <%# IF NOT LOGGED IN -- SHOW OPTIONAL REGISTER BUTTON %>  
 
     <h2>Please register or Log In</h2>
-      <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
+    <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
 
  <%# IF NOT LOGGED IN -- SHOW OPTIONAL LOG IN BUTTON %>  
       
       <a href="/login" class="btn btn-primary" role="button" >Log In</a>
       <%end %>
   </nav> 
-  
 </center> 
 </body>
 </html>

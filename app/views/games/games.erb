@@ -25,9 +25,9 @@
 
 	<% @user.games.each do |game| %>
 
-<form action="/games/<%=game.user_id%>/edit" method="POST">
+<!-- <form action="/games/<%=game.user_id%>/edit" method="POST"> -->
 	<div class="container">    
-		<input type ="checkbox">
+	<!-- 	<input type ="checkbox"> -->
 	  <div class="row">
 	   	<div class="col-sm-4"><b>Username:&ensp;</b><%= game.user.username %></div> <%# each platform %>
 	    <div class="col-sm-4"><b>Title:&ensp;</b><%= game.title %></div> <%# each title %>
@@ -37,7 +37,7 @@
 	</div>
 <% end %> 
 <center>
- <input type="submit" value="Update Game">
+<!--  <input type="submit" value="Update Game"> -->
 
 </center>
 </form>

@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 
-  get '/games' do #read - load games page
+  get '/games' do #display all the user's games
     if logged_in?
       @user = current_user
       session[:user_id] = @user.id
@@ -11,7 +11,7 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/new' do #create - load new form
+  get '/games/new' do #create - displays create game form  
     if logged_in?
       erb :'games/new'
     else
@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     end
   end
 
-  post '/games' do #creates a new game
+  post '/games' do #creates one game
     if params[:title] == "" || params[:platform] == ""
         redirect to "/games/new"
     else
@@ -31,7 +31,7 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id' do #loads show page
+  get '/games/:id' do #displays one game based on ID in the url
     if logged_in?
       @game = Game.find_by_id(params[:id])
       erb :'games/show'
@@ -40,7 +40,7 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id/edit' do #loads edit form
+  get '/games/:id/edit' do #displays edit form based on ID in the url
     if logged_in? # if the user is logged in
       @game = Game.find_by_id(params[:id]) # find the game by its param id and set it to an instance variable @game
       if @game && @game.user == current_user #compare that specific game to the game's user (creator) to the current user
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
     end
   end
 
-  patch '/games/:id' do #updates a game
+  patch '/games/:id' do #modifies an existing game based on ID in the url
     if logged_in? && params[:title] == ""
         redirect to "/games/#{params[:id]}/edit"
     else
@@ -64,7 +64,7 @@ class GamesController < ApplicationController
     end
   end
 
-  delete '/games/:id/delete' do #deletes a game
+  delete '/games/:id/delete' do #deletes one game based on ID in the url
     @game = Game.find_by_id(params[:id])
     if logged_in?
       @user = current_user

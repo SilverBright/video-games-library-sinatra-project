@@ -6,7 +6,7 @@ end
 
 
 
-use Rack::MethodOverride #allows for use of patch and delete methods
+use Rack::MethodOverride #Sinatra Middleware - allows for use of patch and delete methods, and must be placed above all other controllers
 use GamesController 
 use UsersController
 run ApplicationController

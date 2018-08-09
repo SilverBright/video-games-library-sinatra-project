@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'thin'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt' #password encryption
+gem 'bcrypt' #BCrypt will store a salted, hashed version of a password in our database in a column called password_digest
 gem "tux"
 gem 'rack-flash3' #flash[:notice] = messaging style
 gem 'sinatra-flash' #allows the use of flash in sinatra

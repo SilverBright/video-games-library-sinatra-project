@@ -30,7 +30,8 @@
 <div class="container">
   
   <form class="form-inline" method="post" action="/games/<%= @game.id %>">
-    <input id='hidden' type='hidden' name='_method' value='patch'>
+    <input id='hidden' type='hidden' name='_method' value='patch'> 
+    <%# The hidden input field uses Rack::MethodOverride, which is part of Sinatra middleware. %>
     <div class="form-group">
       <label for="title">New Title:</label>   
       <input type="text" class="form-control" placeholder="title" name="title">
