@@ -17,17 +17,13 @@
   </table>
 </div>
 
-<%# LINK BUTTON TO EDIT PAGE %>
+<%# LINK BUTTONs TO EDIT, DELETE, OR SEE LIBRARY %>
 
 <center>
     <% if logged_in? %>
-    <a href="/games/<%= @game.id %>/edit" button type="button" class="btn btn-danger" role="button">Edit Or Delete Your Game</a>  <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>
-    
-
-<%# IF LOGGED IN -- OPTIONAL LOGOUT BUTTON %>   
-
-    <a href="/logout" class="btn btn-info btn-warning" role="button" >Log Out</a>
-    <br />
+    <a href="/games/<%= @game.id %>/edit" button type="button" class="btn btn-danger" role="button">Edit Or Delete Your Game</a>&emsp;
+    <a href="/games/new" class="btn btn-success" role="button" >Add Another Game</a>&emsp;
+    <a href="/games" button type="button" class="btn btn-primary" role="button">See Your Game Library</a>
     <% end %>
     </center>
 
