@@ -6,15 +6,18 @@ class UsersController < ApplicationController
   end
 
   get '/register' do #read - loads page
-    if logged_in?
-      redirect to "/" #home page (index) which is defined in the application_controller
-    else
+    if !logged_in?
       erb :'users/register' #registration page
+    else
+      redirect to "/" #home page (index) is defined in the application_controller
     end
   end
 
   post '/register' do #creates a new user
    @user = User.create(username: params[:username], password: params[:password])
+   #                  (:username => params[:username], :password => params[:password])
+   #                  ( key      => params[:value],     key      => params[:value])
+   # binding.pry       params => {"username"=>"Babs",  "password"=> "****"}    
    @user.save
     if @user.valid?
       session[:user_id] = @user.id # starts a tracking session

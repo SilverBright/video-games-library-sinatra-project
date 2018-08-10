@@ -2,18 +2,21 @@ require 'pry'
 
 class GamesController < ApplicationController
 
-  # The params hash is a “rack” object that is accessible through Sinatra’s request object. The params hash stores information posted by html forms in the form of a hash which contains a key-value pair. The key of this pair defaults to the value of the <input>’s name=“attribute”. Meanwhile, the info that the user submits is the value of that key-value pair.
+  # The params hash is a “rack” object that is accessible through Sinatra’s request object. 
+  # The params hash stores information posted by html forms in the form of a hash which contains a key-value pair. 
+  # The key defaults to the value of the <input>’s name=“attribute”, and the data that the user submits is the value
+  # of that key-value pair.
 
-  # The params hash stores form data, the user’s entry should always be the value of a key-value pair.
+  # The params hash stores the form data, the user’s entry should always be the value of a key-value pair.
 
   get '/games' do #display all games by all users
     if logged_in?
       @user = current_user
       session[:user_id] = @user.id
       @games = Game.all
-      erb :'games/games'
+      erb :'games/games' #renders the page for view if the user is logged in
     else
-      redirect to '/login'
+      redirect to '/login' #sends the user to a different page if not logged in
     end
   end
 
@@ -31,7 +34,8 @@ class GamesController < ApplicationController
     else
       @game = current_user.games.build(title: params[:title], platform: params[:platform])
       #                               (:title => params[:title], :platform => params[:platform])
-      # binding.pry                    params => {"title"=>"Tetris", "platform"=>"mobile"}                     
+      #                               (key    => params[:value],  key      => params[:value])
+      # binding.pry                   params => {"title"=>"Tetris", "platform"=>"mobile"}                     
       @game.save
       flash[:success] = "You've successfully created a new game!"
       redirect to "/games/#{@game.id}"
@@ -41,9 +45,9 @@ class GamesController < ApplicationController
   get '/games/:id' do #displays one game based on ID in the url
     if logged_in?
       @game = Game.find_by_id(params[:id])
-      erb :'games/show'
+      erb :'games/show' 
     else
-      redirect to '/login'
+      redirect to '/login' 
     end
   end
 
