@@ -21,7 +21,7 @@ class GamesController < ApplicationController
 
   post '/games' do #creates one game
     if params[:title] == "" || params[:platform] == ""
-        redirect to "/games/new"
+       redirect to "/games/new"
     else
       # @game = Game.create(title: params[:title], platform: params[:platform])
       @game = current_user.games.build(title: params[:title], platform: params[:platform])
@@ -46,7 +46,7 @@ class GamesController < ApplicationController
       if @game && @game.user == current_user #compare that specific game to the game's user (creator) to the current user
         erb :'games/edit' #render the edit page (which has the update form)
       else 
-        flash[:error] = "Oops!! #{@game.title} was not updated --  this is not your entry."
+        flash[:error] = "Oops!! #{@game.title} is not your game -- Please select from your own titles."
         redirect to '/games' #go back to the library
       end
     end

@@ -1,37 +1,30 @@
 <%# VIDEO GAME LIBRARY %>
 
 <center>
-	<h2>YOUR COMPLETE VIDEO GAME LIBRARY</h2>
+	<h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
 
 <%# CREATE A NEW GAME%>
 
     <% if logged_in? %>
 	 <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>  
 	 <% end %>  
-	<br />
-	<br />
-	<br />
 </center>
+	<br />
+	<br />
+	<br />
+	<br />
 
-<%# LIST ALL THE GAMES %>
+<%# LIST ALL THE GAMES AND USERS %>
 
-	<% @user.games.each do |game| %>
-
-<!-- <form action="/games/<%=game.user_id%>/edit" method="POST"> -->
-	<div class="container">    
-	<!-- 	<input type ="checkbox"> -->
-	  <div class="row">
-	   	<div class="col-sm-4"><b>Username:&ensp;</b><%= game.user.username %></div> <%# each platform %>
-	    <div class="col-sm-4"><b>Title:&ensp;</b><%= game.title %></div> <%# each title %>
-	    <div class="col-sm-4"><b>Platform:&ensp;</b><%= game.platform %></div> <%# each platform %>
-	    <hr>
-	  </div>
-	</div>
-<% end %> 
 <center>
-<!--  <input type="submit" value="Update Game"> -->
-
+<div>
+<% @games.each do |game| %>
+<a href="/games/<%= game.id %>">
+	<p><b><%=game.title %></b></a>
+		Platform:&ensp;<b><%=game.platform%></b>&ensp;
+		Posted by:&ensp;<b><%= game.user.username %></b></p>
+		<hr>
+<% end %>
 </center>
-</form>
-
+</div>
  

@@ -6,7 +6,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Verdana', sans-serif;
   }
 
   html, body {
@@ -18,8 +18,8 @@
   body {
     background-image: url("../images/gaming-pattern copy.png"); /* PAGE BACKGROUND IMAGE */
     color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
+    font-family: 'Verdana', Sans-Serif;
+    line-height: 5px;
   }
 
   .wrapper {
@@ -61,7 +61,7 @@
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 36px;
   }
 
@@ -136,11 +136,11 @@
 
 .error {       /* ERROR IN RED TEXT */
    color: red;
-   font-family: 'Ubuntu', sans-serif;
+   font-family: 'Verdana', sans-serif;
    font-weight: bold;
  }
 
 .success {  /* SUCCESS IN GREEN TEXT */
     color: green;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Verdana', sans-serif;
    font-weight: bold;
