@@ -49,6 +49,7 @@ class UsersController < ApplicationController
 
   get '/logout' do #read - load page
     if logged_in?
+      flash[:success] = "Thanks for stopping by!"
       session.clear
       redirect to '/login'
     end

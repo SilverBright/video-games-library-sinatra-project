@@ -1,6 +1,12 @@
+require 'pry'
+
 class GamesController < ApplicationController
 
-  get '/games' do #display all the user's games
+  # The params hash is a “rack” object that is accessible through Sinatra’s request object. The params hash stores information posted by html forms in the form of a hash which contains a key-value pair. The key of this pair defaults to the value of the <input>’s name=“attribute”. Meanwhile, the info that the user submits is the value of that key-value pair.
+
+  # The params hash stores form data, the user’s entry should always be the value of a key-value pair.
+
+  get '/games' do #display all games by all users
     if logged_in?
       @user = current_user
       session[:user_id] = @user.id
@@ -23,8 +29,9 @@ class GamesController < ApplicationController
     if params[:title] == "" || params[:platform] == ""
        redirect to "/games/new"
     else
-      # @game = Game.create(title: params[:title], platform: params[:platform])
       @game = current_user.games.build(title: params[:title], platform: params[:platform])
+      #                               (:title => params[:title], :platform => params[:platform])
+      # binding.pry                    params => {"title"=>"Tetris", "platform"=>"mobile"}                     
       @game.save
       flash[:success] = "You've successfully created a new game!"
       redirect to "/games/#{@game.id}"
