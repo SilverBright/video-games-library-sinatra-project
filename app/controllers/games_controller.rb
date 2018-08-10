@@ -46,7 +46,7 @@ class GamesController < ApplicationController
       if @game && @game.user == current_user #compare that specific game to the game's user (creator) to the current user
         erb :'games/edit' #render the edit page (which has the update form)
       else 
-        flash[:error] = "Oops!! #{@game.title} is not your game -- Please select from your own titles."
+        flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
         redirect to '/games' #go back to the library
       end
     end
