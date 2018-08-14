@@ -1,32 +1,22 @@
 <%# CREATE A NEW GAME PAGE %>
 
-<center>
-<h1>Add A Game To Your Library:</h1>
+<center><h1>Add A Game To Your Library:</h1>
 
 <br />
 
 <%# NEW GAME FORM %>
 
-
 <div class="container">
-
-  <form class="form-inline-control" method="post" action="/games"> <%# 'Method -HOW' and 'Action-WHERE' connect the form to the sinatra application %>
+  <form class="form-inline-control" method="post" action="/games"> 
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" placeholder="title" name="title">
-
     </div>
-    <!-- All user submitted data will appear in a params hash accessible throughout the Sinatra controllers.--> 
-    <!-- The name attribute of an <input> corresponds to a key in the params hash for that data. -->
-
     <div class="form-group">
       <label for="platform">&emsp;Platform:</label>
       <input type="text" class="form-control" placeholder="Platform" name="platform">
     </div>
-
     &emsp;<button type="submit" class="btn btn-default">Submit</button>
     </center>
   </form>
 </div>
-
-<!-- - the form is throwing the data to the server, which catches it by having the same receiving address (/games/id) and way of receiving the data (post). -->

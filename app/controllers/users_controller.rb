@@ -1,26 +1,23 @@
 class UsersController < ApplicationController
 
   get '/users' do
-    @users = User.all #define instance variable for view
+    @users = User.all 
     erb :'users/index'
   end
 
-  get '/register' do #read - loads page
+  get '/register' do 
     if !logged_in?
-      erb :'users/register' #registration page
+      erb :'users/register' 
     else
-      redirect to "/" #sends user to the index page if they are logged in
+      redirect to "/" 
     end
   end
 
-  post '/register' do #creates a new user
-   @user = User.create(username: params[:username], password: params[:password])
-   #                  (:username => params[:username], :password => params[:password])
-   #                  ( key      => params[:value],     key      => params[:value])
-   # binding.pry       params => {"username"=>"Babs",  "password"=> "****"}    
+  post '/register' do 
+   @user = User.create(username: params[:username], password: params[:password]) 
    @user.save
     if @user.valid?
-      session[:user_id] = @user.id # starts a tracking session
+      session[:user_id] = @user.id 
       redirect "/games"
     elsif @user.invalid? && User.find_by(username: @user.username)
       flash[:error] = "That username is already taken, please choose another."
@@ -31,7 +28,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/login' do #read - load page
+  get '/login' do 
     if !logged_in?
       erb :'users/login'
     else
@@ -39,7 +36,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/login' do #create user login
+  post '/login' do 
    @user = User.find_by(:username => params[:username])
    if @user && @user.authenticate(params[:password])
      session[:user_id] = @user.id
@@ -50,7 +47,7 @@ class UsersController < ApplicationController
    end
  end
 
-  get '/logout' do #read - load page
+  get '/logout' do 
     if logged_in?
       flash[:success] = "Thanks for stopping by!"
       session.clear
@@ -59,5 +56,5 @@ class UsersController < ApplicationController
   else
     redirect to '/login'
   end
+  
 end
-

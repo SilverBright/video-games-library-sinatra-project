@@ -1,56 +1,59 @@
 <%# HOME PAGE %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
 <%# BOOTSTRAP %>
 
-  <title>Video Games Library</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/stylesheets/main.css" /> <%# main.css overrides bootstrap css %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+    <title>Video Games Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
   <body>
-<center>
+    <center>
 
 <%# MINI-NAVBAR %>  
 
 <%# IF LOGGED IN -- SHOW OPTIONAL ADD A GAME BUTTON %>
 
-  <nav>
-    <div class="container">
-     <% if logged_in? %>
-    <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
+    <nav>
+      <div class="container">
+       <% if logged_in? %>
+      <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
 
-<%# IF LOGGED IN -- SHOW OPTIONAL LOGOUT BUTTON %>   
+  <%# IF LOGGED IN -- SHOW OPTIONAL LOGOUT BUTTON %>   
 
-    <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
-    <% else %>
+      <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
+      <% else %>
 
-<%# IF NOT LOGGED IN -- SHOW OPTIONAL REGISTER BUTTON %>  
-    
-    <h1><b>Welcome to the Video Games Library!</b></h1>
-    <h2>Please register or Log In</h2>
-    <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
-
- <%# IF NOT LOGGED IN -- SHOW OPTIONAL LOG IN BUTTON %>  
+  <%# IF NOT LOGGED IN -- SHOW OPTIONAL REGISTER BUTTON %>  
       
-      <a href="/login" class="btn btn-primary" role="button" >Log In</a>
+      <h1><b>Welcome to the Video Games Library!</b></h1>
+      <h2>Please register or Log In</h2>
+      <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
+
+   <%# IF NOT LOGGED IN -- SHOW OPTIONAL LOG IN BUTTON %>  
+        
+        <a href="/login" class="btn btn-primary" role="button" >Log In</a>
       <%end %>
-  </nav> 
+    </nav> 
+
   <br/>
   <br/>
   <br/>
   <br/>
 
-  <div class="container">          
-  <img src="images/mariobros.jpg" class="img-circle" alt="Mario Bros" width="600" height="400"> 
-</div>
-</center> 
-</body>
+      <div class="container">          
+        <img src="images/mariobros.jpg" class="img-circle" alt="Mario Bros" width="600" height="400"> 
+      </div>
+    </center> 
+  </body>
 </html>
 
 

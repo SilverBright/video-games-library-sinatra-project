@@ -1,7 +1,6 @@
 <%# VIDEO GAME LIBRARY %>
 
-<center>
-	<h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
+<center><h2>THE COMPLETE VIDEO GAME LIBRARY</h2>
 
 <%# CREATE A NEW GAME%>
 
@@ -9,6 +8,7 @@
 	 <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>  
 	 <% end %>  
 </center>
+
 	<br />
 	<br />
 	<br />
@@ -17,14 +17,13 @@
 <%# LIST ALL THE GAMES AND USERS %>
 
 <center>
-<div>
-<% @games.each do |game| %>
-<a href="/games/<%= game.id %>">
-	<p><b><%=game.title %></b></a>
-		Platform:&ensp;<b><%=game.platform%></b>&ensp;
-		Posted by:&ensp;<b><%= game.user.username %></b></p>
-		<hr>
-<% end %>
+	<div>
+		<% @games.each do |game| %>
+		<a href="/games/<%= game.id %>">
+			<p><b><%=game.title %></b></a>
+				Platform:&ensp;<b><%=game.platform%></b>&ensp;
+				Posted by:&ensp;<b><%= game.user.username %></b></p>
+				<hr>
+		<% end %>
+	</div>
 </center>
-</div>
- 
