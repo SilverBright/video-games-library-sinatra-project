@@ -26,14 +26,17 @@
 <%# UPDATE FORM %>
 
   <div class="container">
-    <form class="form-inline" method="post" action="/games/<%= @game.id %>">
+    <form class="form-inline" method="post" action="/games/<%= @game.id %>"> <%# 'Method -HOW' and 'Action-WHERE' connect the form to the sinatra application %>
       <input id='hidden' type='hidden' name='_method' value='patch'> 
       <%# The hidden input field uses Rack::MethodOverride, which is part of Sinatra middleware. %>
       <div class="form-group">
         <label for="title">New Title:</label>   
         <input type="text" class="form-control" placeholder="title" name="title">
       </div>
-      <div class="form-group">
+      <!-- All user submitted data will appear in a params hash accessible throughout the Sinatra controllers.--> 
+      <!-- The name attribute of an <input> corresponds to a key in the params hash for that data. -->
+      <!-- The key will be the name of the data, and the value will be the data itself. -->
+      <div class="form-group"> 
         &emsp;&emsp;
         <label for="platform">New Platform:</label>
         <input type="text" class="form-control" placeholder="platform" name="platform">
@@ -43,6 +46,8 @@
       <button type="submit" id='submit' class="btn btn-default">Submit</button>  
     </form>
   </div>
+
+  <!-- - the form is throwing the data to the server, which catches it by having the same receiving address (/games/id) and way of receiving the data (post). -->
 
     <br />
     <br />

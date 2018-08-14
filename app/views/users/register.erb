@@ -6,10 +6,12 @@
 <%# REGISTRATION FORM %>
 
   <div class="container">
-    <form class="form-inline" method="post" action="/register">
+    <form class="form-inline" method="post" action="/register"> <%# 'Method -HOW' and 'Action-WHERE' connect the form to the sinatra application %>
       <div class="form-group">
         <label for="username">Username:</label>   
         <input type="username" class="form-control" placeholder="Username" name="username">
+        <!-- All user submitted data will appear in a params hash accessible throughout the Sinatra controllers.--> 
+        <!-- The name attribute of an <input> corresponds to a key in the params hash for that data. -->
       </div>
       <div class="form-group">
         &emsp;&emsp;
@@ -33,4 +35,5 @@
 
 </center>
 
+<!-- - the form is throwing the data to the server, which catches it by having the same receiving address (/games/id) and way of receiving the data (post). -->
 

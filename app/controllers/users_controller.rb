@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'users/register' #registration page
     else
-      redirect to "/" #home page (index) is defined in the application_controller
+      redirect to "/" #sends user to the index page if they are logged in
     end
   end
 
