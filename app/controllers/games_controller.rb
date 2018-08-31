@@ -40,17 +40,28 @@ class GamesController < ApplicationController
     end
   end
 
-  get '/games/:id/edit' do 
-    if logged_in? 
-      @game = Game.find_by_id(params[:id]) 
-      if @game && @game.user == current_user 
-        erb :'games/edit'
-      else 
-        flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
-        redirect to '/games'
-      end
-    end
-  end
+    get '/games/:id/edit' do
+      @game = Game.find_by_id(params[:id])
+      if @game && @game.user == current_user
+         erb :'games/edit'
+       else
+         flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+         redirect to '/games'
+       end
+     end
+   end
+
+  # get '/games/:id/edit' do 
+  #   if logged_in? 
+  #     @game = Game.find_by_id(params[:id]) 
+  #     if @game && @game.user == current_user 
+  #       erb :'games/edit'
+  #     else 
+  #       flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+  #       redirect to '/games'
+  #     end
+  #   end
+  # end
 
   patch '/games/:id' do 
     if logged_in? && params[:title] == ""
@@ -64,17 +75,27 @@ class GamesController < ApplicationController
     end
   end
 
-  delete '/games/:id/delete' do
-    @game = Game.find_by_id(params[:id])
-    if logged_in?
-      @user = current_user
-      @game.delete
-      flash[:success] = "You've successfully deleted a game!"
-      redirect to '/games'
-    else
-      flash[:error] = "Oops, your game was not deleted"
-      redirect to "/games/#{params[:id]}"
-    end
-  end
+    delete '/games/:id/delete' do
+      @game = Game.find_by_id(params[:id])
+      if @game && @game.user == current_user
+        @game.delete
+       else
+        flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+        redirect to '/games'
+      end
+   end
+
+  # delete '/games/:id/delete' do
+  #   @game = Game.find_by_id(params[:id])
+  #   if logged_in?
+  #     @user = current_user
+  #     @game.delete
+  #     flash[:success] = "You've successfully deleted a game!"
+  #     redirect to '/games'
+  #   else
+  #     flash[:error] = "Oops, your game was not deleted"
+  #     redirect to "/games/#{params[:id]}"
+  #   end
+  # end
   
 end
