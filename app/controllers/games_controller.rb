@@ -67,11 +67,12 @@ class GamesController < ApplicationController
     if logged_in? && params[:title] == ""
         redirect to "/games/#{params[:id]}/edit"
     else
-      @game = Game.find_by_id(params[:id])
-      @game.update(title: params[:title], platform: params[:platform])
-      @game.save
-      flash[:success] = "You've successfully edited a game!"
-      redirect "/games"
+       @game = Game.find_by_id(params[:id])
+    if @game && @game.user == current_user
+       @game.update(title: params[:title], platform: params[:platform])
+       @game.save
+       flash[:success] = "You've successfully edited a game!"
+       redirect "/games"
     end
   end
 
