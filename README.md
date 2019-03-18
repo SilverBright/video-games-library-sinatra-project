@@ -4,6 +4,7 @@ Welcome to *Video Games Library*, a Sinatra Web-app to create and manage your vi
 
 ## Installation
 
+ Before beginning, you must have Ruby installed on your system
  You can install this app by running in your terminal ` https://github.com/SilverBright/video-games-library-sinatra-project `
 
 ## Usage
