@@ -1,6 +1,6 @@
 # Video Games Library
 
-Welcome to *Video Games Library*, a Sinatra Web-app to create and manage your video game collection! With Video Games Library, the user creates a secure account, adds game titles and some notes, which can be modified or deleted.
+Welcome to *Video Games Library*, a Sinatra Web-app to create and manage your video game collection! With Video Games Library, the user can create a secure account, add game titles and notes which can be modified or deleted.
 
 ## Installation
 
