@@ -52,9 +52,9 @@ class UsersController < ApplicationController
       flash[:success] = "Thanks for stopping by!"
       session.clear
       redirect to '/login'
+    else
+      redirect to '/login'
     end
-  else
-    redirect to '/login'
   end
   
 end
