@@ -49,7 +49,6 @@ class GamesController < ApplicationController
          redirect to '/games'
        end
      end
-   end
 
   patch '/games/:id' do 
     @game = Game.find_by_id(params[:id])
