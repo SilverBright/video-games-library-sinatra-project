@@ -4,7 +4,7 @@ Welcome to *Video Games Library*, a Sinatra Web App where you can create and man
 
 In Video Games Library, a user can:
  - create a secure account
- - securly log in
+ - log in securely with user session
  - create, read, edit, and delete game titles
 
  A user cannot:
@@ -14,7 +14,8 @@ In Video Games Library, a user can:
 
 ## Installation
 
- From your terminal, you can clone and install this app by running:` https://github.com/SilverBright/video-games-library-sinatra-project `
+ From your terminal, you can clone and install this app by running:  
+ ` https://github.com/SilverBright/video-games-library-sinatra-project `
 
 Change directory to `video-games-library`, and run the following:
 
@@ -24,13 +25,14 @@ rake db:migrate
 shotgun
 ```
 
-##Instructions
+## Instructions
 
-Create a new account, then log in.  
-You will be taken to the main index page where you can see a list of all users' video game submissions.
-Select 'Add a game' to add your game title and platform, then click 'submit.
-From here, you can edit or delete your entry, add a new game, or view the library.
-To edit or delete your title from the Library, simply click on the title which will take you directly to the edit screen. 
+- Create a new account
+- Login 
+- You will be redirected to the main index page where you can see a list of video games
+- Select 'Add a game' to add a game title and platform, then click 'submit
+- From here, you can edit or delete your entry, add a new game, or go to the library
+- To edit or delete your title from the Library, simply click directly on the title, which will redirect you to an edit screen
 
 
 ## Specs
