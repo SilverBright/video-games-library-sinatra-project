@@ -4,9 +4,9 @@
 
 <%# CREATE A NEW GAME%>
 
-    <% if logged_in? %>
-	 <a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>  
-	 <% end %>  
+  <% if logged_in? %>
+	<a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>  
+	<% end %>  
 </center>
 
 	<br />
@@ -19,11 +19,10 @@
 <center>
 	<div>
 		<% @games.each do |game| %>
-		<a href="/games/<%= game.id %>">
-			<p><b><%=game.title %></b></a>
+			<a href="/games/<%= game.id %>"><p><b><%=game.title %></b></a>
 				Platform:&ensp;<b><%=game.platform%></b>&ensp;
 				Posted by:&ensp;<b><%= game.user.username %></b></p>
-				<hr>
+			<hr>
 		<% end %>
 	</div>
 </center>
