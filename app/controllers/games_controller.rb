@@ -66,6 +66,7 @@ class GamesController < ApplicationController
     @game = Game.find_by_id(params[:id])
     if @game && @game.user == current_user
       @game.delete
+      flash[:success] = "You have successfully deleted #{@game.title}."
       redirect to '/games'
     else
       flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
