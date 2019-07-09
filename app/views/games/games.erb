@@ -1,22 +1,19 @@
 <%# VIDEO GAME LIBRARY %>
 
-<center><h2>VIDEO GAME LIBRARY</h2>
+<center>
+	<h2>VIDEO GAME LIBRARY</h2>
 
 <%# CREATE A NEW GAME%>
 
   <% if logged_in? %>
-	<a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>  
-	<% end %>  
-</center>
+		<a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>
+	<% end %> 
 
-	<br />
-	<br />
-	<br />
-	<br />
+	<hr>
+	<i>To edit or delete, click on a title (you must be the creator of that title)</i>
+	<hr>
 
 <%# LIST ALL THE GAMES AND USERS %>
-
-<center>
 	<div>
 		<% @games.each do |game| %>
 			<a href="/games/<%= game.id %>"><p><b><%=game.title %></b></a>
