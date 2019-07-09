@@ -66,7 +66,7 @@
   }
 
   p {
-    margin-bottom: 18px;
+    margin-bottom: 25px;
   }
 
   .main {
@@ -144,3 +144,4 @@
     color: green;
     font-family: 'Verdana', sans-serif;
    font-weight: bold;
+}
