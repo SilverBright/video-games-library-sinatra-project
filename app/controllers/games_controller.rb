@@ -55,8 +55,8 @@ class GamesController < ApplicationController
     if @game && @game.user == current_user
        @game.update(title: params[:title], platform: params[:platform])
        @game.save
-       flash[:success] = "You've successfully edited a game!"
        redirect "/games"
+      #  flash[:success] = "You've successfully updated your entry to: #{@game.title}"
     else
       redirect to "/games"
     end
