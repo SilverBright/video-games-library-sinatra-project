@@ -52,13 +52,15 @@ class GamesController < ApplicationController
 
   patch '/games/:id' do 
     @game = Game.find_by_id(params[:id])
-    if @game && @game.user == current_user
-       @game.update(title: params[:title], platform: params[:platform])
-       @game.save
-       redirect "/games"
-      #  flash[:success] = "You've successfully updated your entry to: #{@game.title}"
+    @game && @game.user == current_user 
+    if params[:title] == "" || params[:platform] == ""
+      flash[:error] = "Your game did not update.  Title and Platform fields cannot be blank"
+      redirect to '/games'
     else
-      redirect to "/games"
+      @game.update(title: params[:title], platform: params[:platform]) 
+      @game.save
+      flash[:success] = "You've successfully updated your entry to: #{@game.title}"
+      redirect to '/games'
     end
   end
 
