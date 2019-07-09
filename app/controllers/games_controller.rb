@@ -40,15 +40,15 @@ class GamesController < ApplicationController
     end
   end
 
-    get '/games/:id/edit' do
-      @game = Game.find_by_id(params[:id])
-      if @game && @game.user == current_user
-         erb :'games/edit'
-       else
-         flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
-         redirect to '/games'
-       end
-     end
+  get '/games/:id/edit' do
+    @game = Game.find_by_id(params[:id])
+    if @game && @game.user == current_user
+      erb :'games/edit'
+    else
+      flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+      redirect to '/games'
+    end
+  end
 
   patch '/games/:id' do 
     @game = Game.find_by_id(params[:id])
@@ -62,14 +62,15 @@ class GamesController < ApplicationController
     end
   end
 
-    delete '/games/:id/delete' do
-      @game = Game.find_by_id(params[:id])
-      if @game && @game.user == current_user
-        @game.delete
-       else
-        flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
-        redirect to '/games'
-      end
-   end
+  delete '/games/:id/delete' do
+    @game = Game.find_by_id(params[:id])
+    if @game && @game.user == current_user
+      @game.delete
+      redirect to '/games'
+    else
+      flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+      redirect to '/games'
+    end
+  end
   
 end
