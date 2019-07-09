@@ -7,9 +7,9 @@ gem 'rake'
 gem 'require_all'
 gem 'sqlite3', '~> 1.3.6'
 gem 'thin'
-gem 'shotgun'
+gem 'shotgun' #Runs the program in a local web browser
 gem 'pry'
-gem 'bcrypt' #BCrypt will store a salted, hashed version of a password in our database in a column called password_digest
+gem 'bcrypt' #BCrypt will store a salted, hashed version of a password in the database in a column called password_digest
 gem "tux"
 gem 'rack-flash3' #flash[:notice] = messaging style
 gem 'sinatra-flash' #allows the use of flash in sinatra
