@@ -30,8 +30,8 @@ shotgun
 - Create a new account
 - Login 
 - You will be redirected to the main index page where you can see a list of video games
-- Select 'Add a game' to add a game title and platform, then click 'submit
-- From here, you can edit or delete your entry, add a new game, or go to the library
+- Select 'Add a game' to add a game title and platform, then click 'submit'
+- From here, you can edit or delete your entry, add a new game, or go to the Library
 - To edit or delete your title from the Library, simply click directly on the title, which will redirect you to an edit screen
 
 
@@ -39,11 +39,11 @@ shotgun
 
 - App built using Sinatra
 - Includes ActiveRecord for storing information in a database
-- Create user accounts with account registration and login / logout capability
+- Create user accounts with account registration, and login / logout capability
 - Users cannot modify content created by other users
-- Contains CRUD operations and MVC component structure, and RESTful routes
+- Contains CRUD operations, MVC component structure, and RESTful routes
 - Includes Navbar for quick and easy navigation
-- Implements Bootstrap for simple, responsive styling
+- Implements Bootstrap for very simple, responsive styling
 
 ## Contributing
 
@@ -57,4 +57,4 @@ The app is available as open source under the terms of the [MIT License](https:/
 
 Bootstrap references were obtained from [here](https://getbootstrap.com)
 
-Project structure developed with Corneal gem.
+Project structure developed with Corneal, a Sinatra app generator: https://github.com/thebrianemory/corneal.
