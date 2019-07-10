@@ -4,13 +4,13 @@ Welcome to *Video Games Library*, a Sinatra Web App where you can create and man
 
 In Video Games Library, a user can:
  - create a secure account
- - log in securely with user session
+ - log in with secure user session
  - create, read, edit, and delete game titles
 
  A user cannot:
  - edit or delete other users' entries
  - see or interact with the library when logged out
- - Cannot log in with out registration 
+ - log in without registration 
 
 ## Installation
 
