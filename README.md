@@ -55,5 +55,5 @@ The app is available as open source under the terms of the [MIT License](https:/
 
 ## Credits
 
-Bootstrap references were obtained from [here](https://getbootstrap.com)
+Bootstrap references were obtained from [here](https://getbootstrap.com).  
 Project structure developed with Corneal, a Sinatra app generator: https://github.com/thebrianemory/corneal.
