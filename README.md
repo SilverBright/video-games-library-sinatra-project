@@ -51,10 +51,9 @@ Bug reports and pull requests are welcome on GitHub.  This project is intended t
 
 ## License
 
-The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The app is available as open source under the terms of the [MIT License](https://github.com/SilverBright/Video-Games-Library/blob/master/LICENSE).
 
 ## Credits
 
 Bootstrap references were obtained from [here](https://getbootstrap.com)
-
 Project structure developed with Corneal, a Sinatra app generator: https://github.com/thebrianemory/corneal.
