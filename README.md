@@ -15,13 +15,16 @@ In Video Games Library, a user can:
 ## Installation
 
  From your terminal, you can clone and install this app by running:  
- ` https://github.com/SilverBright/video-games-library-sinatra-project `
+ git clone ` https://github.com/SilverBright/video-games-library-sinatra-project `
 
 Change directory to `video-games-library`, and run the following:
 
 ```ruby
 bundle install
 rake db:migrate
+```
+To start the app, run:
+```
 shotgun
 ```
 
