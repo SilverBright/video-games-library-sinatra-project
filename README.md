@@ -1,6 +1,8 @@
 # Video Games Library
 
-Welcome to *Video Games Library*, a Sinatra Web App where you can create and manage your video game collection! 
+Welcome to *Video Games Library*, a Sinatra Web App where you can create and share your video game collection. 
+
+<img src="images/gamehome.png" width="30%"> <img src="images/gamelibrary.png" width="30%"> <img src="images/gameadd.png" width="30%">
 
 In Video Games Library, a user can:
  - create a secure account
@@ -32,11 +34,10 @@ shotgun
 
 - Create a new account
 - Login 
-- You will be redirected to the main index page where you can see a list of video games
+- You will be redirected to the main index page where you can see a list of video games added by other users
 - Select 'Add a game' to add a game title and platform, then click 'submit'
 - From here, you can edit or delete your entry, add a new game, or go to the Library
 - To edit or delete your title from the Library, simply click directly on the title, which will redirect you to an edit screen
-
 
 ## Specs
 
