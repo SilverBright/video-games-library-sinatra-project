@@ -10,13 +10,15 @@
 	<% end %> 
 
 	<hr>
-	<i>To edit or delete, click on a title (you must be the creator of that title)</i>
+		<i>Click on a title to edit or delete (you must be the creator of that title)</i>
 	<hr>
 
-<%# LIST ALL THE GAMES AND USERS %>
+<%# LIST ALL THE TITLES, PLATFORMS, AND USERS %>
+
+
 	<div>
-		<% @games.each do |game| %>
-			<a href="/games/<%= game.id %>"><p><b><%=game.title %></b></a>
+		<% @games.reverse.each do |game| %>
+				Title: <a href="/games/<%= game.id %>"><b><%=game.title %></b></a>
 				Platform:&ensp;<b><%=game.platform%></b>&ensp;
 				Posted by:&ensp;<b><%= game.user.username %></b></p>
 			<hr>
