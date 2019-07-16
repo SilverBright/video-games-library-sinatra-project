@@ -3,25 +3,22 @@
 <center>
 	<h2>VIDEO GAME LIBRARY</h2>
 
-<%# CREATE A NEW GAME%>
+	<%# CREATE A NEW GAME%>
 
   <% if logged_in? %>
 		<a href="/games/new" class="btn btn-success" role="button" >Add A Game</a>
-	<% end %> 
-
-	<hr>
-		<i>Click on a title to edit or delete (you must be the creator of that title)</i>
-	<hr>
+	<% end %>
+</center>
+<hr>
 
 <%# LIST ALL THE TITLES, PLATFORMS, AND USERS %>
 
-
-	<div>
-		<% @games.reverse.each do |game| %>
-				Title: <a href="/games/<%= game.id %>"><b><%=game.title %></b></a>
-				Platform:&ensp;<b><%=game.platform%></b>&ensp;
-				Posted by:&ensp;<b><%= game.user.username %></b></p>
-			<hr>
-		<% end %>
-	</div>
-</center>
+<div class="container">
+	<% @games.reverse.each do |game| %>
+			Title: <a href="/games/<%= game.id %>"><b><%=game.title %></b></a>
+			Platform:&ensp;<b><%=game.platform%></b>&ensp;
+			Posted by:&ensp;<b><%= game.user.username %></b>
+		<hr>
+	<% end %>
+</div>
+	
