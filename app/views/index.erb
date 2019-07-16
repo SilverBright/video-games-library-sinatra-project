@@ -18,27 +18,27 @@
 <body>
   <center>
 
-    <%# MINI-NAVBAR %>  
+    <%# NAVBAR %>  
 
-    <%# IF LOGGED IN -- SHOW OPTIONAL ADD A GAME BUTTON %>
+    <%# ADD A GAME BUTTON %>
 
     <nav>
       <div class="container">
         <% if logged_in? %>
       <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
 
-    <%# IF LOGGED IN -- SHOW OPTIONAL LOGOUT BUTTON %>   
+    <%# LOGOUT BUTTON %>   
 
       <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
       <% else %>
 
-    <%# IF NOT LOGGED IN -- SHOW OPTIONAL REGISTER BUTTON %>  
+    <%# REGISTER BUTTON %>  
         
       <h1><b>Welcome to the Video Games Library!</b></h1>
       <h2>Please register or Log In</h2>
       <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
 
-    <%# IF NOT LOGGED IN -- SHOW OPTIONAL LOG IN BUTTON %>  
+    <%# LOG IN BUTTON %>  
           
       <a href="/login" class="btn btn-primary" role="button" >Log In</a>
       <%end %>
