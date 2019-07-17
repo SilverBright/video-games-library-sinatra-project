@@ -1,12 +1,9 @@
-<%# HOME PAGE %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Video Games Library</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%# BOOTSTRAP %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="/stylesheets/main.css" /> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -18,11 +15,12 @@
 
     <%# NAVBAR %>  
 
-    <%# ADD A GAME BUTTON %> 
-
     <nav>
       <div class="container">
         <% if logged_in? %>
+
+    <%# ADD A GAME BUTTON %> 
+
         <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
 
     <%# LOGOUT BUTTON %>   
@@ -33,7 +31,7 @@
     <%# REGISTER BUTTON %>  
         
       <h1><b>Welcome to the Video Games Library!</b></h1>
-      <h2>Please register or Log In</h2>
+      <h2>Please register or log in</h2>
       <a href="/register" class="btn btn-primary" role="button" >Register</a>&emsp;&emsp;
 
     <%# LOG IN BUTTON %>  

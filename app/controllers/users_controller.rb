@@ -42,7 +42,7 @@ class UsersController < ApplicationController
      session[:user_id] = @user.id
      redirect to "/games"
    else
-     flash[:error] = "Invalid username or password. Please try again."
+     flash[:error] = "Invalid username or password."
      redirect '/login'
    end
  end

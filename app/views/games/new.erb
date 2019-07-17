@@ -1,20 +1,16 @@
-<%# CREATE A NEW GAME PAGE %>
+<%# NEW GAME %>
 
 <center>
-  <h1>Add A Game To The Library:</h1>
+  <h1>Add a game to the library:</h1>
 
   <br />
 
   <%# NEW GAME FORM %>
 
   <div class="container">
-    <form class="form-inline-control" method="post" action="/games"> 
-      
-        <input type="text" class="form-control" placeholder="enter title" name="title">
-  
-      
-        <input type="text" class="form-control" placeholder="enter platform" name="platform">
-    
+    <form class="form-inline-control" method="post" action="/games">       
+        <input type="text" class="form-control" placeholder="enter title" name="title">     
+        <input type="text" class="form-control" placeholder="enter platform" name="platform">    
       &emsp;<button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>

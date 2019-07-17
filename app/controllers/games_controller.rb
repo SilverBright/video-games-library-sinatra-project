@@ -45,7 +45,7 @@ class GamesController < ApplicationController
     if @game && @game.user == current_user
       erb :'games/edit'
     else
-      flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+      flash[:error] = "#{@game.title} is not your title -- Please select one of your own titles."
       redirect to '/games'
     end
   end
@@ -54,7 +54,7 @@ class GamesController < ApplicationController
     @game = Game.find_by_id(params[:id])
     @game && @game.user == current_user 
     if params[:title] == "" || params[:platform] == ""
-      flash[:error] = "Your game did not update.  Title and Platform fields cannot be blank"
+      flash[:error] = "Your game did not update. Title and Platform fields cannot be blank"
       redirect to '/games'
     else
       @game.update(title: params[:title], platform: params[:platform]) 
@@ -71,7 +71,7 @@ class GamesController < ApplicationController
       flash[:success] = "You have successfully deleted '#{@game.title}'."
       redirect to '/games'
     else
-      flash[:error] = "Oops!! #{@game.title} is not your title -- Please select one of your own titles."
+      flash[:error] = "#{@game.title} is not your title -- Please select one of your own titles."
       redirect to '/games'
     end
   end
