@@ -1,52 +1,40 @@
 <%# EDIT PAGE %>
 
-<center><h3>Edit or delete your game.</h3></center>
-
-<%# SHOWS CURRENT TITLE %>
-
-  <div class="container">        
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Current Title</th>
-          <th>Current Platform</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= @game.title %></td>
-          <td><%= @game.platform %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<center><h3>Edit or delete your game</h3></center>
 
 <%# UPDATE FORM %>
 
-  <div class="container">
-    <form class="form-inline" method="post" action="/games/<%= @game.id %>"> 
-      <input id='hidden' type='hidden' name='_method' value='patch'> 
-      <div class="form-group">
-        <label for="title">New Title:</label>   
-        <input type="text" class="form-control" placeholder="new title" name="title">
-      </div>
-      <div class="form-group"> 
-        &emsp;&emsp;
-        <label for="platform">New Platform:</label>
-        <input type="text" class="form-control" placeholder="new platform" name="platform">
-      </div>
-      <br />
-      <br />
-      <button type="submit" id='submit' class="btn btn-default">Submit</button>  
-    </form>
-    <br />
+  <center>
+    <div class="container">
+      <form class="form-inline" method="post" action="/games/<%= @game.id %>"> 
+        <input id='hidden' type='hidden' name='_method' value='patch'> 
+
+        <%# TITLE %>
+
+        <div class="form-group">
+          <label for="title">New Title:</label>   
+          <input type="text" class="form-control" placeholder="<%= @game.title %>" name="title">
+        </div>
+        
+        <%# PLATFORM %>
+
+        <div class="form-group"> 
+          <label for="platform">New Platform:</label>
+          <input type="text" class="form-control" placeholder="<%= @game.platform %>" name="platform">
+        </div>
+
+        <%# SUBMIT BUTTON %>
+
+        <button type="submit" id='submit' class="btn btn-default">Submit</button>  
+      </form>
 
     <%# DELETE BUTTON %>
 
-    <div>
-      <form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post" style=>
+    <p>
+      <form action="/games/<%= @game.id %>/delete" class="btn btn-default" method="post">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete Your Entry">
       </form>
-    </div>
+    </p>
   </div>
+</center>
