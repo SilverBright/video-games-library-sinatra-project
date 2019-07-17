@@ -66,7 +66,7 @@ The app is available as open source under the terms of the [MIT License](https:/
 
 ## Credits
 
-Project structure developed with [Corneal](https://github.com/thebrianemory/corneal), a Sinatra app generator. 
+Project structure developed with [Corneal](https://github.com/thebrianemory/corneal), a Sinatra app generator.   
 [Bootstrap](https://getbootstrap.com) for responsive styling.  
-[bcrypt](https://github.com/codahale/bcrypt-ruby) gem for password security.  
+[bcrypt](https://github.com/codahale/bcrypt-ruby) gem for password security.    
 [Sinatra-Activerecord](https://github.com/janko/sinatra-activerecord) for data persistence.
