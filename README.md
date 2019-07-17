@@ -3,8 +3,7 @@
 Welcome to *Video Games Library*, a Sinatra Web App where you can create and share your video game collection. 
 
 
-<img src="images/homeborder.png" width="30%"> 
-<img src="images/libraryborder.png" width="30%"> <img src="images/gameborder.png" width="30%">  
+<img src="images/homeborder.png" width="25%"> <img src="images/libraryborder.png" width="25%"> <img src="images/gameborder.png" width="25%">  
 
 
 ## Video Demo
