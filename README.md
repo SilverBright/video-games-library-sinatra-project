@@ -32,12 +32,11 @@ shotgun
 
 ## Instructions
 
-- Create a new account
-- Login 
+- Create a new account and log in 
 - You will be redirected to the main index page where you can see a list of video games added by other users
-- Select 'Add a game' to add a game title and platform, then click 'submit'
+- Select 'Add a game' to add a game title, and platform, then click 'submit'
 - From here, you can edit or delete your entry, add a new game, or go to the Library
-- To edit or delete your title from the Library, simply click directly on the title, which will redirect you to an edit screen
+- To edit or delete your game from the Library, simply click directly on the title, which will redirect you to an edit screen
 
 ## Specs
 
@@ -46,7 +45,7 @@ shotgun
 - Register / login / logout capability
 - bcrypt for password security
 - CRUD operations, MVC structure, and RESTful routes
-- Validations and Flash error or success messaging
+- Validations with Flash error or success messaging
 - Navbar for quick and easy navigation
 - Bootstrap for simple, responsive styling
 
