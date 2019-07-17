@@ -2,11 +2,15 @@
 
 Welcome to *Video Games Library*, a Sinatra Web App where you can create and share your video game collection. 
 
-<img src="images/home.png" width="30%"> <img src="images/library.png" width="30%"> <img src="images/game.png" width="30%">
+
+<img src="images/homeborder.png" width="30%"> 
+<img src="images/library.png" width="30%"> <img src="images/game.png" width="30%">  
+
 
 ## Video Demo
 <a href="https://youtu.be/ivFzaswgahs"><img src="images/home.png" 
 alt="Video Games Library" width="450" /></a>
+
 
 In Video Games Library, a user can:
  - create a secure account
