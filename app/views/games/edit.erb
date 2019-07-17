@@ -1,34 +1,36 @@
 <%# EDIT PAGE %>
 
-<center><h3>Edit or delete your game</h3></center>
+<center>
+  <h3>Edit or delete your game</h3>
+</center>
 
 <%# UPDATE FORM %>
 
-  <center>
-    <div class="container">
-      <form class="form-inline" method="post" action="/games/<%= @game.id %>"> 
-        <input id='hidden' type='hidden' name='_method' value='patch'> 
+<center>
+  <div class="container">
+    <form class="form-inline" method="post" action="/games/<%= @game.id %>"> 
+      <input id='hidden' type='hidden' name='_method' value='patch'> 
 
-        <%# TITLE %>
+      <%# TITLE %>
 
-        <div class="form-group">
+      <div class="form-group">
         <div class="col-7">
           <label for="title">New Title:</label>   
           <input type="text" class="form-control" placeholder="<%= @game.title %>" name="title">
         </div>
-        </div>
-        
-        <%# PLATFORM %>
+      </div>
+      
+      <%# PLATFORM %>
 
-        <div class="form-group"> 
-          <label for="platform">New Platform:</label>
-          <input type="text" class="form-control" placeholder="<%= @game.platform %>" name="platform">
-        </div>
+      <div class="form-group"> 
+        <label for="platform">New Platform:</label>
+        <input type="text" class="form-control" placeholder="<%= @game.platform %>" name="platform">
+      </div>
 
-        <%# SUBMIT BUTTON %>
+      <%# SUBMIT BUTTON %>
 
-        <button type="submit" id='submit' class="btn btn-default">Submit</button>  
-      </form>
+      <button type="submit" id='submit' class="btn btn-default">Submit</button>  
+    </form>
 
     <%# DELETE BUTTON %>
 

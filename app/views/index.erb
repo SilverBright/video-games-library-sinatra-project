@@ -18,16 +18,16 @@
 
     <%# NAVBAR %>  
 
-    <%# ADD A GAME BUTTON %>
+    <%# ADD A GAME BUTTON %> 
 
     <nav>
       <div class="container">
         <% if logged_in? %>
-      <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
+        <a href="/games/new" class="btn btn-primary" role="button">Add A Game</a>&emsp;&emsp;
 
     <%# LOGOUT BUTTON %>   
 
-      <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
+        <a href="/logout" class="btn btn-primary" role="button" >Log Out</a>
       <% else %>
 
     <%# REGISTER BUTTON %>  
@@ -41,11 +41,15 @@
       <a href="/login" class="btn btn-primary" role="button" >Log In</a>
       <%end %>
     </nav> 
+
     <br />
+
+    <%# MARIO BROS IMAGE %>  
 
     <div class="container">          
       <img src="images/mariobros.jpg" class="img-circle" alt="Mario Bros" width="600" height="400"> 
     </div>
+
   </center> 
 </body>
 </html>
