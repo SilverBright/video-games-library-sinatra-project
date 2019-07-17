@@ -41,13 +41,14 @@ shotgun
 
 ## Specs
 
-- App built using Sinatra
-- Includes ActiveRecord for storing information in a database
-- Create user accounts with account registration, and login / logout capability
-- Users cannot modify content created by other users
-- Contains CRUD operations, MVC component structure, and RESTful routes
-- Includes Navbar for quick and easy navigation
-- Implements Bootstrap for very simple, responsive styling
+- Built with Sinatra
+- ActiveRecord for persistence 
+- Register / login / logout capability
+- bcrypt for password security
+- CRUD operations, MVC structure, and RESTful routes
+- Validations and Flash error or success messaging
+- Navbar for quick and easy navigation
+- Bootstrap for simple, responsive styling
 
 ## Contributing
 
