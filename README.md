@@ -7,7 +7,7 @@ Welcome to *Video Games Library*, a Sinatra Web App where you can create and sha
 
 
 ## Video Demo
-<a href="https://youtu.be/ivFzaswgahs"><img src="images/homeborder.png" 
+<a href="https://youtu.be/OWwnfndVQgs"><img src="images/homeborder.png" 
 alt="Video Games Library" width="450" /></a>
 
 
